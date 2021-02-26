@@ -699,4 +699,4 @@ add_executable(godot_native
 	godot-cpp/include/gen/X509Certificate.hpp
 	godot-cpp/include/gen/XMLParser.hpp
 	godot-cpp/include/gen/YSort.hpp
-	src/gdlibrary.cpp)
+        src/GDLibrary.cpp)

@@ -16,4 +16,19 @@ export_presets.cfg
 .mono/
 data_*/
 
+# GDNative
+*.os
+
 # End of https://www.toptal.com/developers/gitignore/api/godot
+
+# IDE
+.idea/
+
+# CMake
+cmake-build-debug/
+
+# Builded files
+lib/win64
+lib/x11
+*.os
+.sconsign.dblite
