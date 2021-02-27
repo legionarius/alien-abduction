@@ -702,4 +702,7 @@ add_executable(
         godot-cpp/include/gen/YSort.hpp
         src/gdlibrary.cpp
         src/GameState.cpp
+		src/BubbleControl.cpp
+		src/Utils.cpp
+		src/Player.cpp
         )
