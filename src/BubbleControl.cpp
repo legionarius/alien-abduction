@@ -8,9 +8,6 @@ using namespace godot;
 
 void BubbleControl::_init() {
 	radius = 0;
-
-	Godot::print(get_position());
-	Godot::print(get_begin());
 }
 
 void BubbleControl::_draw() {
@@ -18,7 +15,7 @@ void BubbleControl::_draw() {
 }
 
 void BubbleControl::_draw_circle_arc(Vector2 center, const real_t radius, int start_angle, int end_angle, Color color) {
-	float nb_points = 128;
+	int nb_points = 128;
 	PoolVector2Array points_arc = PoolVector2Array();
 
 	for (int i = 0; i < nb_points; ++i) {
@@ -32,8 +29,8 @@ void BubbleControl::_draw_circle_arc(Vector2 center, const real_t radius, int st
 }
 
 void BubbleControl::_process(const real_t delta) {
-	if (!animation_timer->is_stopped() && radius <= max_radius) {
-		radius = radius + 300 * delta;
+	if (!animation_timer->is_stopped()) {
+		radius = radius + steps * delta;
 		update();
 	}
 }
@@ -68,5 +65,5 @@ void BubbleControl::_register_methods() {
 	register_method("_init", &BubbleControl::_init);
 	register_method("_draw", &BubbleControl::_draw);
 	register_property("radius", &BubbleControl::max_radius, 20.f);
-	register_property("animation_opening_time", &BubbleControl::bubble_time, 2.f);
+	register_property("bubble_time", &BubbleControl::bubble_time, 2.f);
 }

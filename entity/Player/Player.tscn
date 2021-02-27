@@ -25,3 +25,5 @@ __meta__ = {
 }
 
 [node name="Bubble" parent="CollisionShape2D" instance=ExtResource( 2 )]
+radius = 80.0
+bubble_time = 0.15
