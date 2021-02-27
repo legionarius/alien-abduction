@@ -11,8 +11,7 @@ stages:
   - deploy
 
 variables:
-  EXPORT_NAME: gamejam-training
-  GIT_SUBMODULE_STRATEGY: recursive
+  EXPORT_NAME: weekly-gamejam-190
   GODOT_CPP: /home/root/godot-cpp/
 
 linux:
