@@ -8,15 +8,35 @@
 #include <Godot.hpp>
 #include <InputEventKey.hpp>
 #include <Node.hpp>
+#include <PackedScene.hpp>
 #include <Ref.hpp>
+#include <ResourceLoader.hpp>
+#include <SceneTree.hpp>
+#include <Viewport.hpp>
+#include <iomanip>
 
 namespace godot {
 class GameState : public Node {
 	GODOT_CLASS(GameState, Node);
 
+	const std::string base_level_name = "Level";
+	int level_count;
+	int current_level_id;
+	bool is_started;
+
+	void _load_level();
+	void connect_level();
+	void disconnect_level();
+	void add_level(int level_id);
+	void remove_level();
+	std::string get_level_path(int level_id);
+
 public:
+	void _start_game();
+
 	static void _register_methods();
 	void _init();
+	void _ready();
 	void _input(const Ref<InputEvent> event);
 };
 } // namespace godot
