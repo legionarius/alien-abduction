@@ -7,7 +7,6 @@ cache:
     - .import/
 
 stages:
-  - build
   - export
   - deploy
 
@@ -18,7 +17,6 @@ variables:
 
 linux:
   stage: export
-  needs: ["gdnative"]
   script:
     - scons platform=linux target=release
     - sed -i -e 's/X11.64/Server/g' lib/gdlibrary.tres
@@ -31,7 +29,6 @@ linux:
 
 windows:
   stage: export
-  needs: ["gdnative"]
   script:
     - scons platform=windows target=release
     - sed -i -e 's/Windows.64/Server/g' lib/gdlibrary.tres
@@ -44,7 +41,6 @@ windows:
 
 mac:
   stage: export
-  needs: ["gdnative"]
   when: manual
   script:
     - scons platform=osx target=release
