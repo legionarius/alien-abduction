@@ -12,6 +12,9 @@ void BubbleControl::_init() {
 
 void BubbleControl::_draw() {
 	_draw_circle_arc(get_position(), radius, -2, 360, color);
+	draw_circle(get_position(), radius, Color(1.f, 1.f, 1.f, 0.1f));
+	Vector2 mpos = get_local_mouse_position().normalized() * Vector2(radius - 2, radius - 2);
+	draw_line(get_position(), mpos, Color(1.f, 1.f, 1.f), 3.0, true);
 }
 
 void BubbleControl::_draw_circle_arc(Vector2 center, const real_t radius, int start_angle, int end_angle, Color color) {
@@ -33,6 +36,7 @@ void BubbleControl::_process(const real_t delta) {
 		radius = radius + steps * delta;
 		update();
 	}
+	update();
 }
 
 void BubbleControl::_appear() {
@@ -47,6 +51,7 @@ void BubbleControl::_disappear() {
 }
 
 void BubbleControl::_ready() {
+	hide();
 	Godot::print("Maximum radius = " + Utils::gdt_string(max_radius));
 	steps = max_radius / bubble_time;
 	_init_bubble_timer();
