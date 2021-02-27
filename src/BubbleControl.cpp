@@ -11,7 +11,7 @@ void BubbleControl::_init() {
 }
 
 void BubbleControl::_draw() {
-	_draw_circle_arc(get_position(), radius, -2, 360, Color(0.244, 0.5, 0.6));
+	_draw_circle_arc(get_position(), radius, -2, 360, color);
 }
 
 void BubbleControl::_draw_circle_arc(Vector2 center, const real_t radius, int start_angle, int end_angle, Color color) {
@@ -66,4 +66,5 @@ void BubbleControl::_register_methods() {
 	register_method("_draw", &BubbleControl::_draw);
 	register_property("radius", &BubbleControl::max_radius, 20.f);
 	register_property("bubble_time", &BubbleControl::bubble_time, 2.f);
+	register_property("color", &BubbleControl::color, Color(1.f, 1.f, 1.f));
 }
