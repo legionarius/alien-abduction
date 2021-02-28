@@ -18,13 +18,13 @@ void BubbleControl::_draw() {
 }
 
 void BubbleControl::_draw_circle_arc(Vector2 center, const real_t radius, const Color color) {
-	const float nb_points = 128;
+	const int nb_points = 128;
 	const int start_angle = -2;
 	const int end_angle = 360;
 	PoolVector2Array points_arc = PoolVector2Array();
 
 	for (int i = 0; i < nb_points; ++i) {
-		float anglePoint = Math::deg2rad(-2 + (float)(i * (end_angle - start_angle)) / nb_points - 90.0);
+		float anglePoint = Math::deg2rad(start_angle + static_cast<float>(i) * (end_angle - start_angle) / nb_points - 90.f);
 		points_arc.append(center + Vector2(Math::cos(anglePoint), Math::sin(anglePoint)) * radius);
 	}
 
