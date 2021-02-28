@@ -15,14 +15,16 @@ namespace godot {
 class BubbleControl : public Control {
 	GODOT_CLASS(BubbleControl, Control);
 
-	void _draw_circle_arc(Vector2 center, const real_t radius, int start_angle, int end_angle, Color color);
+	void _draw_circle_arc(Vector2 center, real_t radius, Color color);
 	Timer *animation_timer;
 	real_t radius;
 	uint16_t steps;
 	void _init_bubble_timer();
 
 public:
-	Color color;
+	Color outline_color;
+	Color fill_color;
+	Color line_color;
 	real_t bubble_time;
 	real_t max_radius;
 
