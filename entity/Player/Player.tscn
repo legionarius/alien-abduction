@@ -25,3 +25,6 @@ __meta__ = {
 }
 
 [node name="Bubble" parent="CollisionShape2D" instance=ExtResource( 2 )]
+
+[node name="JumpForce" type="Timer" parent="."]
+process_mode = 0

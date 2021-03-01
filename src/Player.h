@@ -11,6 +11,7 @@
 #include <InputEventKey.hpp>
 #include <InputEventMouseButton.hpp>
 #include <KinematicBody2D.hpp>
+#include <Math.hpp>
 #include <Ref.hpp>
 
 namespace godot {
@@ -19,6 +20,10 @@ class Player : public KinematicBody2D {
 	GODOT_CLASS(Player, KinematicBody2D);
 
 	BubbleControl *bubbleControl;
+	real_t impulse_time;
+	real_t impulse;
+	bool generate_impulse;
+	bool apply_impulse;
 
 public:
 	static void _register_methods();
