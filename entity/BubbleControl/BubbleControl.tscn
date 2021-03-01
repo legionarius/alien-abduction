@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entity/BubbleControl/BubbleControl.gdns" type="Script" id=1]
+
+[node name="Bubble" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+circle_radius = 100.0
+animation_time = 0.25
+outline_color = Color( 0.0823529, 0.227451, 0.65098, 1 )
+fill_color = Color( 0.701961, 0.654902, 0.654902, 0.101961 )
+line_color = Color( 0.992157, 0.992157, 0.992157, 1 )
