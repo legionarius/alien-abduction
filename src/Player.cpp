@@ -24,7 +24,10 @@ void Player::_process(const real_t delta) {
 	if (is_on_floor()) {
 	}
 	if (apply_impulse) {
-		move_and_slide(Vector2(std::abs(impulse) * 5000.0, -1 * std::abs(impulse) * 5000.0), get_local_mouse_position());
+		Vector2 direction = get_local_mouse_position().normalized();
+		move_and_slide(
+				Vector2(direction.x * 10000.0 * std::abs(impulse), direction.y * std::abs(impulse) * 5000.0),
+				get_local_mouse_position());
 		apply_impulse = false;
 		impulse = 0.0;
 		impulse_time = 0.0;
@@ -34,7 +37,6 @@ void Player::_process(const real_t delta) {
 		impulse_time += delta;
 		impulse = Math::sin(impulse_time + delta);
 		bubbleControl->_set_oscillation(impulse);
-		Godot::print(Utils::gdt_string(impulse));
 	}
 }
 
