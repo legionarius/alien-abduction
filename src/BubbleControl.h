@@ -20,12 +20,12 @@ class BubbleControl : public Control {
 	real_t radius;
 	uint16_t steps;
 	void _init_bubble_timer();
+	real_t bubble_time;
 
 public:
 	Color outline_color;
 	Color fill_color;
 	Color line_color;
-	real_t bubble_time;
 	real_t max_radius;
 
 	void _appear();

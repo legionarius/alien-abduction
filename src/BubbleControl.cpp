@@ -73,8 +73,8 @@ void BubbleControl::_register_methods() {
 	register_method("_ready", &BubbleControl::_ready);
 	register_method("_init", &BubbleControl::_init);
 	register_method("_draw", &BubbleControl::_draw);
-	register_property("radius", &BubbleControl::max_radius, 20.f);
-	register_property("bubble_time", &BubbleControl::bubble_time, 2.f);
+	register_property("circle_radius", &BubbleControl::max_radius, 20.f);
+	register_property("animation_time", &BubbleControl::bubble_time, 2.f);
 	register_property("outline_color", &BubbleControl::outline_color, Color(1.f, 1.f, 1.f));
 	register_property("fill_color", &BubbleControl::fill_color, Color(1.f, 1.f, 1.f, 0.1f));
 	register_property("line_color", &BubbleControl::line_color, Color(0.f, 0.f, 0.f));
