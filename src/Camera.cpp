@@ -8,6 +8,7 @@
 using namespace godot;
 
 void Camera::_init() {
+	_shift_from_bottom = 200;
 }
 
 void Camera::_ready() {
@@ -18,7 +19,8 @@ void Camera::_process(const real_t delta) {
 	if (playerParentNode != nullptr) {
 		if (playerParentNode->get_child_count() != 0) {
 			Player *player = Object::cast_to<Player>(playerParentNode->get_child(0));
-			this->set_position(player->get_position());
+			Vector2 newPosition = Vector2(player->get_global_position().x, player->get_global_position().y - _shift_from_bottom);
+			this->set_position(newPosition);
 		}
 	}
 }

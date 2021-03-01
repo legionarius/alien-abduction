@@ -16,6 +16,8 @@ namespace godot {
 class Camera : public Camera2D {
 	GODOT_CLASS(Camera, Camera2D);
 
+	real_t _shift_from_bottom;
+
 public:
 	// Godot methods
 	static void _register_methods();
