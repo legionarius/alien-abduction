@@ -24,12 +24,13 @@ class GameState : public Node {
 	int current_level_id;
 	bool is_started;
 
+	std::string get_level_path(int level_id);
 	void _load_level();
+	void add_level(int level_id);
 	void connect_level();
 	void disconnect_level();
-	void add_level(int level_id);
 	void remove_level();
-	std::string get_level_path(int level_id);
+	void spawn_player();
 
 public:
 	void _start_game();

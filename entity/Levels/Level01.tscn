@@ -22,3 +22,23 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
 position = Vector2( 526.087, 45.2548 )
 shape = SubResource( 1 )
+
+[node name="Wall1" type="ColorRect" parent="."]
+margin_left = 344.542
+margin_top = 359.966
+margin_right = 384.542
+margin_bottom = 504.966
+color = Color( 0.192157, 0.211765, 0.384314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wall2" type="ColorRect" parent="."]
+margin_left = 590.265
+margin_top = 229.613
+margin_right = 630.265
+margin_bottom = 374.613
+color = Color( 0.192157, 0.211765, 0.384314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

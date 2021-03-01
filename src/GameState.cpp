@@ -19,6 +19,7 @@ void GameState::_input(const Ref<InputEvent> event) {}
 
 void GameState::_start_game() {
 	_load_level();
+	spawn_player();
 	emit_signal("_game_started");
 }
 
@@ -60,18 +61,30 @@ void GameState::remove_level() {
 
 void GameState::connect_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
-	level_node->get_child(0)->connect("level_started", this, );
-	level_node->get_child(0)->connect("level_finished", this, );
+	//TODO:	level_node->get_child(0)->connect("level_started", this, );
+	//TODO:	level_node->get_child(0)->connect("level_finished", this, );
 }
 
 void GameState::disconnect_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	if (level_node->get_child_count() > 0) {
 		auto current_level = level_node->get_child(0);
-		current_level->disconnect("level_started", this, );
-		current_level->disconnect("level_finished", this, );
+		//TODO:	current_level->disconnect("level_started", this, );
+		//TODO:	current_level->disconnect("level_finished", this, );
 	} else {
-		Godot::print("No level to remove");
+		Godot::print("No level to disconnect");
+	}
+}
+
+void GameState::spawn_player() {
+	auto level_node = get_tree()->get_root()->get_node("World/Level");
+	auto current_level = level_node->get_child(0);
+	auto spawn_point = current_level->get_node("PlayerStart");
+	if (spawn_point != nullptr) {
+		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Player.tscn");
+		spawn_point->add_child(player_res->instance());
+	} else {
+		Godot::print("NO SPAWN POINT !");
 	}
 }
 
