@@ -15,8 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot Native"
+config/name="Walk On Walls"
+run/main_scene="res://entity/MainScene/MainScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameState="*res://entity/GameState/GameState.tscn"
 
 [rendering]
 
