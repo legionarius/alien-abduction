@@ -4,47 +4,47 @@ project(weekly-gamejam-190)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(godot-cpp)
-include_directories(godot-cpp/godot_headers)
-include_directories(godot-cpp/godot_headers/android)
-include_directories(godot-cpp/godot_headers/arvr)
-include_directories(godot-cpp/godot_headers/gdnative)
-include_directories(godot-cpp/godot_headers/nativescript)
-include_directories(godot-cpp/godot_headers/net)
-include_directories(godot-cpp/godot_headers/pluginscript)
-include_directories(godot-cpp/godot_headers/videodecoder)
+include_directories(godot-cpp/godot-headers)
+include_directories(godot-cpp/godot-headers/android)
+include_directories(godot-cpp/godot-headers/arvr)
+include_directories(godot-cpp/godot-headers/gdnative)
+include_directories(godot-cpp/godot-headers/nativescript)
+include_directories(godot-cpp/godot-headers/net)
+include_directories(godot-cpp/godot-headers/pluginscript)
+include_directories(godot-cpp/godot-headers/videodecoder)
 include_directories(godot-cpp/include)
 include_directories(godot-cpp/include/core)
 include_directories(godot-cpp/include/gen)
 
 add_executable(
 		weekly-gamejam-190
-        godot-cpp/godot_headers/android/godot_android.h
-        godot-cpp/godot_headers/arvr/godot_arvr.h
-        godot-cpp/godot_headers/gdnative/aabb.h
-        godot-cpp/godot_headers/gdnative/array.h
-        godot-cpp/godot_headers/gdnative/basis.h
-        godot-cpp/godot_headers/gdnative/color.h
-        godot-cpp/godot_headers/gdnative/dictionary.h
-        godot-cpp/godot_headers/gdnative/gdnative.h
-        godot-cpp/godot_headers/gdnative/node_path.h
-        godot-cpp/godot_headers/gdnative/plane.h
-        godot-cpp/godot_headers/gdnative/pool_arrays.h
-        godot-cpp/godot_headers/gdnative/quat.h
-        godot-cpp/godot_headers/gdnative/rect2.h
-        godot-cpp/godot_headers/gdnative/rid.h
-        godot-cpp/godot_headers/gdnative/string.h
-        godot-cpp/godot_headers/gdnative/string_name.h
-        godot-cpp/godot_headers/gdnative/transform.h
-        godot-cpp/godot_headers/gdnative/transform2d.h
-        godot-cpp/godot_headers/gdnative/variant.h
-        godot-cpp/godot_headers/gdnative/vector2.h
-        godot-cpp/godot_headers/gdnative/vector3.h
-        godot-cpp/godot_headers/nativescript/godot_nativescript.h
-        godot-cpp/godot_headers/net/godot_net.h
-        godot-cpp/godot_headers/net/godot_webrtc.h
-        godot-cpp/godot_headers/pluginscript/godot_pluginscript.h
-        godot-cpp/godot_headers/videodecoder/godot_videodecoder.h
-        godot-cpp/godot_headers/gdnative_api_struct.gen.h
+        godot-cpp/godot-headers/android/godot_android.h
+        godot-cpp/godot-headers/arvr/godot_arvr.h
+        godot-cpp/godot-headers/gdnative/aabb.h
+        godot-cpp/godot-headers/gdnative/array.h
+        godot-cpp/godot-headers/gdnative/basis.h
+        godot-cpp/godot-headers/gdnative/color.h
+        godot-cpp/godot-headers/gdnative/dictionary.h
+        godot-cpp/godot-headers/gdnative/gdnative.h
+        godot-cpp/godot-headers/gdnative/node_path.h
+        godot-cpp/godot-headers/gdnative/plane.h
+        godot-cpp/godot-headers/gdnative/pool_arrays.h
+        godot-cpp/godot-headers/gdnative/quat.h
+        godot-cpp/godot-headers/gdnative/rect2.h
+        godot-cpp/godot-headers/gdnative/rid.h
+        godot-cpp/godot-headers/gdnative/string.h
+        godot-cpp/godot-headers/gdnative/string_name.h
+        godot-cpp/godot-headers/gdnative/transform.h
+        godot-cpp/godot-headers/gdnative/transform2d.h
+        godot-cpp/godot-headers/gdnative/variant.h
+        godot-cpp/godot-headers/gdnative/vector2.h
+        godot-cpp/godot-headers/gdnative/vector3.h
+        godot-cpp/godot-headers/nativescript/godot_nativescript.h
+        godot-cpp/godot-headers/net/godot_net.h
+        godot-cpp/godot-headers/net/godot_webrtc.h
+        godot-cpp/godot-headers/pluginscript/godot_pluginscript.h
+        godot-cpp/godot-headers/videodecoder/godot_videodecoder.h
+        godot-cpp/godot-headers/gdnative_api_struct.gen.h
         godot-cpp/include/core/AABB.hpp
         godot-cpp/include/core/Array.hpp
         godot-cpp/include/core/Basis.hpp
