@@ -32,3 +32,4 @@ lib/win64
 lib/x11
 *.os
 .sconsign.dblite
+api.json
