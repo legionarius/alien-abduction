@@ -15,8 +15,14 @@ namespace godot {
 class GameTimer : public Control {
 	GODOT_CLASS(GameTimer, Control);
 
+	GameTimer *gameTimer;
 	Label *label;
 	Timer *timer;
+	int ms;
+	int s;
+	int m;
+	void _start_timer();
+	void _pause_timer();
 
 public:
 	static void _register_methods();
@@ -24,6 +30,8 @@ public:
 	void _ready();
 	void _process(const real_t delta);
 	void _on_Timer_timeout();
+
+	String GetElapsedTime();
 };
 
 } // namespace godot

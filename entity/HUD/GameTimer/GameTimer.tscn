@@ -33,8 +33,8 @@ __meta__ = {
 }
 
 [node name="GameTimerFrameBackground" type="Sprite" parent="."]
-position = Vector2( 154.5, 73.923 )
-scale = Vector2( 4.17188, 7.125 )
+position = Vector2( 168, 73.923 )
+scale = Vector2( 4.59376, 7.125 )
 texture = ExtResource( 9 )
 
 [node name="GameClock" type="Timer" parent="."]
@@ -44,13 +44,12 @@ wait_time = 0.1
 position = Vector2( 64, 71 )
 scale = Vector2( 0.18, 0.18 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="GameTimerLabel" type="Label" parent="."]
-margin_left = 126.0
+margin_left = 103.0
 margin_top = 52.0
-margin_right = 285.0
+margin_right = 262.0
 margin_bottom = 138.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.831373, 0.831373, 0.831373, 1 )
@@ -59,13 +58,13 @@ __meta__ = {
 }
 
 [node name="GameTimerFrameDown" type="Sprite" parent="."]
-position = Vector2( 151, 138.923 )
-scale = Vector2( 4.65625, 1 )
+position = Vector2( 165.5, 138.923 )
+scale = Vector2( 5.10937, 1 )
 texture = ExtResource( 8 )
 
 [node name="GameTimerFrameUp" type="Sprite" parent="."]
-position = Vector2( 150.5, 8.923 )
-scale = Vector2( 4.64062, 1 )
+position = Vector2( 164.5, 8.923 )
+scale = Vector2( 5.07812, 1 )
 texture = ExtResource( 8 )
 
 [node name="GameTimerFrameLeft" type="Sprite" parent="."]
@@ -75,7 +74,7 @@ scale = Vector2( 2.23437, 1 )
 texture = ExtResource( 8 )
 
 [node name="GameTimerFrameRight" type="Sprite" parent="."]
-position = Vector2( 293.5, 73.923 )
+position = Vector2( 321.5, 73.923 )
 rotation = -1.5708
 scale = Vector2( 2.23437, 1 )
 texture = ExtResource( 8 )
