@@ -11,6 +11,7 @@
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
 
+#include "FadeScreen.h"
 #include "GameState.h"
 #include "Player.h"
 
@@ -21,10 +22,12 @@ class Camera : public Camera2D {
 
 	real_t _shift_from_bottom;
 	Player *_player;
+	FadeScreen *fadeScreen;
 
 public:
 	void _start_focus_player();
 	void _end_focus_player();
+	void _fade_in();
 
 	// Godot methods
 	static void _register_methods();

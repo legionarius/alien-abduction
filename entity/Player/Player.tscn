@@ -29,3 +29,7 @@ __meta__ = {
 
 [node name="JumpForce" type="Timer" parent="."]
 process_mode = 0
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+process_parent = true
+physics_process_parent = true

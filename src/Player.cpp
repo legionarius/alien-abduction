@@ -42,6 +42,12 @@ void Player::_physics_process(const real_t delta) {
 	move_and_slide(motion, floor);
 }
 
+void Player::_not_visible_anymore() {
+	emit_signal("player_out");
+	motion.x = 0;
+	set_position(Vector2::ZERO);
+}
+
 void Player::_init() {
 	impulse = 0.0;
 	impulse_time = 0.0;
@@ -51,11 +57,13 @@ void Player::_init() {
 	generate_impulse = false;
 	_gravity = 30;
 	_inertia = 2.0;
-	_jump_force = Vector2(600.0, 1000.0);
+	_jump_force = Vector2(700.0, 1000.0);
 }
 
 void Player::_ready() {
 	bubbleControl = Object::cast_to<BubbleControl>(get_node("CollisionShape2D/Bubble"));
+	visibilityNotifier2D = Object::cast_to<VisibilityEnabler2D>(get_node("VisibilityEnabler2D"));
+	visibilityNotifier2D->connect("viewport_exited", this, "_not_visible_anymore");
 }
 
 void Player::_register_methods() {
@@ -63,7 +71,9 @@ void Player::_register_methods() {
 	register_method("_ready", &Player::_ready);
 	register_method("_physics_process", &Player::_physics_process);
 	register_method("_input", &Player::_input);
+	register_method("_not_visible_anymore", &Player::_not_visible_anymore);
 	register_property("gravity", &Player::_gravity, 30.f);
 	register_property("inertia", &Player::_inertia, 2.f);
 	register_property("jump_force", &Player::_jump_force, Vector2(600.0, 1000.0));
+	register_signal<Player>("player_out");
 }
