@@ -14,11 +14,6 @@ void GameState::_init() {
 void GameState::_ready() {}
 
 void GameState::_input(const Ref<InputEvent> event) {
-	Ref<InputEventKey> event_key = event;
-	if (!is_started && event_key.is_valid() && event_key->is_action_pressed("ui_accept")) {
-		Godot::print("Game Start !!!");
-		_start_game();
-	}
 }
 
 void GameState::_start_game() {
