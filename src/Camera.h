@@ -20,7 +20,6 @@ class Camera : public Camera2D {
 	GODOT_CLASS(Camera, Camera2D);
 
 	real_t _shift_from_bottom;
-	GameState *_gameState;
 	Player *_player;
 
 public:

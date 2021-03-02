@@ -11,10 +11,9 @@ void Camera::_init() {
 }
 
 void Camera::_ready() {
-	_gameState = Object::cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
-	if (_gameState != nullptr) {
-		Godot::print("Gamestate found");
-		_gameState->connect("level_started", this, "_start_focus_player");
+	GameState *gameState = Object::cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
+	if (gameState != nullptr) {
+		gameState->connect("level_started", this, "_start_focus_player");
 	}
 }
 
@@ -26,7 +25,6 @@ void Camera::_process(const real_t delta) {
 }
 
 void Camera::_start_focus_player() {
-	Godot::print("Start focus");
 	auto *playerParentNode = (get_tree()->get_root()->get_node("World/Level")->get_child(0)->get_node("PlayerStart"));
 	if (playerParentNode != nullptr) {
 		if (playerParentNode->get_child_count() != 0) {

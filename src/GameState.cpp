@@ -61,8 +61,7 @@ void GameState::remove_level() {
 }
 
 void GameState::connect_level() {
-	Godot::print("signal: level_started");
-	//auto level_node = get_tree()->get_root()->get_node("World/Level");
+	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	emit_signal("level_started");
 	//TODO:	level_node->get_child(0)->connect("level_started", this, );
 	//TODO:	level_node->get_child(0)->connect("level_finished", this, );
