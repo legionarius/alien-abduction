@@ -43,7 +43,6 @@ void Player::_physics_process(const real_t delta) {
 }
 
 void Player::reset_position() {
-	emit_signal("player_out");
 	motion.x = 0;
 	set_position(Vector2::ZERO);
 }
@@ -73,5 +72,4 @@ void Player::_register_methods() {
 	register_property("gravity", &Player::_gravity, 30.f);
 	register_property("inertia", &Player::_inertia, 2.f);
 	register_property("jump_force", &Player::_jump_force, Vector2(600.0, 1000.0));
-	register_signal<Player>("player_out");
 }
