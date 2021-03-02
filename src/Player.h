@@ -11,6 +11,7 @@
 #include <InputEventKey.hpp>
 #include <InputEventMouseButton.hpp>
 #include <KinematicBody2D.hpp>
+#include <KinematicCollision2D.hpp>
 #include <Math.hpp>
 #include <Ref.hpp>
 
@@ -24,13 +25,19 @@ class Player : public KinematicBody2D {
 	real_t impulse;
 	bool generate_impulse;
 	bool apply_impulse;
+	Vector2 motion;
+	Vector2 direction;
+	float _gravity;
+	float _inertia;
+	Vector2 _jump_force;
+	const Vector2 floor = Vector2(0, -1);
 
 public:
 	static void _register_methods();
 	void _init();
 	void _ready();
 	void _input(const Ref<InputEvent> event);
-	void _process(const real_t delta);
+	void _physics_process(const real_t delta);
 };
 
 } // namespace godot
