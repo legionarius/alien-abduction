@@ -18,6 +18,9 @@ class Camera : public Camera2D {
 
 	real_t _shift_from_bottom;
 
+	void _start_focus_player();
+	void _end_focus_player();
+
 public:
 	// Godot methods
 	static void _register_methods();

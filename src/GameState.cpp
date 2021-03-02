@@ -61,6 +61,7 @@ void GameState::remove_level() {
 
 void GameState::connect_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
+	emit_signal("level_started");
 	//TODO:	level_node->get_child(0)->connect("level_started", this, );
 	//TODO:	level_node->get_child(0)->connect("level_finished", this, );
 }
@@ -68,6 +69,7 @@ void GameState::connect_level() {
 void GameState::disconnect_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	if (level_node->get_child_count() > 0) {
+		emit_signal("level_finished");
 		auto current_level = level_node->get_child(0);
 		//TODO:	current_level->disconnect("level_started", this, );
 		//TODO:	current_level->disconnect("level_finished", this, );
@@ -94,4 +96,6 @@ void GameState::_register_methods() {
 	register_method("_input", &GameState::_input);
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
+	register_signal<GameState>("level_started");
+	register_signal<GameState>("level_finished");
 }

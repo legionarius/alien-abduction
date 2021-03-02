@@ -12,6 +12,8 @@ void Camera::_init() {
 }
 
 void Camera::_ready() {
+	auto *gamestate = get_tree()->get_root()->get_node("Gamestate");
+	gamestate->connect("level", )
 }
 
 void Camera::_process(const real_t delta) {
