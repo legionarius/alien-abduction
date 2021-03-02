@@ -5,9 +5,11 @@
 #ifndef WEEKLY_GAMEJAM_190_CAMERA_H
 #define WEEKLY_GAMEJAM_190_CAMERA_H
 
+#include <Area2D.hpp>
 #include <Camera2D.hpp>
 #include <Godot.hpp>
 #include <KinematicBody2D.hpp>
+#include <Ref.hpp>
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
 
@@ -28,6 +30,7 @@ public:
 	void _start_focus_player();
 	void _end_focus_player();
 	void _fade_in();
+	void _player_out(Node *node);
 
 	// Godot methods
 	static void _register_methods();

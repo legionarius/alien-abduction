@@ -29,10 +29,3 @@ __meta__ = {
 
 [node name="JumpForce" type="Timer" parent="."]
 process_mode = 0
-
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -32.5269, 0 )
-scale = Vector2( 1.84853, 1 )
-rect = Rect2( -20, -20, 80, 40 )
-process_parent = true
-physics_process_parent = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entity/MainScene/MainScene.gdns" type="Script" id=1]
 [ext_resource path="res://entity/MainScene/Camera.gdns" type="Script" id=2]
@@ -19,6 +19,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 1.0, 0.521, 0.0, 0.352, 1.0 ]
 }
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28.6526, 329.061 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -43,3 +46,15 @@ color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="OutLeft" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/OutLeft"]
+position = Vector2( -574.524, 5.0397 )
+shape = SubResource( 2 )
+
+[node name="OutRight" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/OutRight"]
+position = Vector2( 574.524, 5.03967 )
+shape = SubResource( 2 )

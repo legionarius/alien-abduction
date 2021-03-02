@@ -17,7 +17,6 @@
 #include <Ref.hpp>
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
-#include <VisibilityEnabler2D.hpp>
 
 namespace godot {
 
@@ -25,7 +24,6 @@ class Player : public KinematicBody2D {
 	GODOT_CLASS(Player, KinematicBody2D);
 
 	BubbleControl *bubbleControl;
-	VisibilityEnabler2D *visibilityNotifier2D;
 	real_t impulse_time;
 	real_t impulse;
 	bool generate_impulse;
@@ -38,7 +36,7 @@ class Player : public KinematicBody2D {
 	const Vector2 floor = Vector2(0, -1);
 
 public:
-	void _not_visible_anymore();
+	void reset_position();
 
 	static void _register_methods();
 	void _init();
