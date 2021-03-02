@@ -11,6 +11,7 @@ void Level::_init() {
 }
 
 void Level::_ready() {
+	Godot::print("Level ready");
 	Area2D *startZone = Object::cast_to<Area2D>(get_node("StartZone"));
 	Area2D *finishZone = Object::cast_to<Area2D>(get_node("FinishZone"));
 	startZone->connect("body_entered", this, "_start_level");
