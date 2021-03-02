@@ -4,9 +4,9 @@
 
 #include "BubbleControl.h"
 #include "GameState.h"
-#include "Player.h"
-#include "Level.h"
 #include "GameTimer.h"
+#include "Level.h"
+#include "Player.h"
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
 	godot::Godot::gdnative_init(o);
