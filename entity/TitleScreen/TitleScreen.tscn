@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entity/TitleScreen/TitleScreen.gdns" type="Script" id=1]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameTitle" type="Label" parent="."]
+margin_left = 216.591
+margin_top = 2.59361
+margin_right = 830.591
+margin_bottom = 120.594
+custom_colors/font_color = Color( 0.905882, 0.0666667, 0.0666667, 1 )
+text = "Walk On Walls"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Panel" parent="."]
+margin_left = 340.178
+margin_top = 163.978
+margin_right = 690.178
+margin_bottom = 563.978
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+margin_right = 350.0
+margin_bottom = 400.0
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+margin_left = 50.0
+margin_right = 300.0
+margin_bottom = 400.0
+rect_clip_content = true
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="MainMenu/VBoxContainer"]
+margin_top = 166.0
+margin_right = 250.0
+margin_bottom = 186.0
+text = "Start"
+
+[node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
+margin_top = 190.0
+margin_right = 250.0
+margin_bottom = 210.0
+text = "Settings"
+
+[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
+margin_top = 214.0
+margin_right = 250.0
+margin_bottom = 234.0
+text = "Exit"

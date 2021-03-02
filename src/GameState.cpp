@@ -11,8 +11,7 @@ void GameState::_init() {
 	current_level_id = 0;
 }
 
-void GameState::_ready() {
-}
+void GameState::_ready() {}
 
 void GameState::_input(const Ref<InputEvent> event) {
 	Ref<InputEventKey> event_key = event;
