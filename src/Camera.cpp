@@ -13,7 +13,8 @@ void Camera::_init() {
 void Camera::_ready() {
 	GameState *gameState = Object::cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
 	if (gameState != nullptr) {
-		gameState->connect("level_started", this, "_start_focus_player");
+		gameState->connect("camera_start_focus", this, "_start_focus_player");
+		gameState->connect("camera_end_focus", this, "_end_focus_player");
 	}
 }
 
