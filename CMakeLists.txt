@@ -707,4 +707,5 @@ add_executable(
 		src/Utils.cpp
 		src/Player.cpp
 		src/Level.cpp
-        )
+		src/TitleScreen.cpp
+		src/MainScene.cpp src/MainScene.h)
