@@ -706,5 +706,5 @@ add_executable(
         src/Utils.cpp
         src/Player.cpp
         src/Level.cpp
-        src/Timer.cpp
+        src/GameTimer.cpp
 )
