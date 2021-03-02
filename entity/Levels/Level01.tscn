@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entity/Levels/Level01.gdns" type="Script" id=1]
 [ext_resource path="res://asset/tilesheet.png" type="Texture" id=2]
+[ext_resource path="res://entity/Light/Light.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 585.588, 10 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 1.49695, 0.821167, 0.958008, 147.034, 40.458, 146.034, 40.0784, 0.821167 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 32, 0, 32, 0, 0, 64, 0 )
@@ -108,6 +112,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Wall1"]
+occluder = SubResource( 6 )
+
 [node name="Wall2" type="ColorRect" parent="."]
 margin_left = 590.265
 margin_top = 229.613
@@ -122,3 +129,7 @@ __meta__ = {
 tile_set = SubResource( 5 )
 format = 1
 tile_data = PoolIntArray( 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+
+[node name="Light" parent="." instance=ExtResource( 3 )]
+position = Vector2( 361.504, 312.422 )
+scale = Vector2( 0.330707, 0.37075 )
