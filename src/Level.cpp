@@ -25,6 +25,7 @@ void Level::_start_level() {
 }
 
 void Level::_finish_level() {
+	Godot::print("Finish Level");
 	emit_signal("level_finished");
 }
 

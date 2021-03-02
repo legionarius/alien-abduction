@@ -35,7 +35,7 @@ class GameState : public Node {
 public:
 	void _start_game();
 	void _player_ready();
-	void _player_remove();
+	void _remove_player();
 	static void _register_methods();
 	void _init();
 	void _ready();

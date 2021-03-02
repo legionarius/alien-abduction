@@ -67,7 +67,7 @@ void GameState::_remove_level() {
 void GameState::_connect_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	//TODO:	level_node->get_child(0)->connect("level_started", this, );
-	//TODO:	level_node->get_child(0)->connect("level_finished", this, );
+	level_node->get_child(0)->connect("level_finished", this, "_remove_player");
 }
 
 void GameState::_disconnect_level() {
@@ -89,19 +89,18 @@ void GameState::_spawn_player() {
 		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Player.tscn");
 		Node *playerInstance = player_res->instance();
 		playerInstance->connect("ready", this, "_player_ready");
-		playerInstance->connect("tree_exited", this, "_player_remove");
 		spawn_point->add_child(playerInstance);
 	} else {
 		Godot::print("NO SPAWN POINT !");
 	}
 }
 
-void GameState::_player_ready() {
-	emit_signal("camera_start_focus");
+void GameState::_remove_player() {
+	emit_signal("camera_end_focus");
 }
 
-void GameState::_player_remove() {
-	emit_signal("camera_end_focus");
+void GameState::_player_ready() {
+	emit_signal("camera_start_focus");
 }
 
 void GameState::_register_methods() {
@@ -109,7 +108,7 @@ void GameState::_register_methods() {
 	register_method("_ready", &GameState::_ready);
 	register_method("_input", &GameState::_input);
 	register_method("_player_ready", &GameState::_player_ready);
-	register_method("_player_remove", &GameState::_player_remove);
+	register_method("_remove_player", &GameState::_remove_player);
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
 	register_signal<GameState>("camera_start_focus");
