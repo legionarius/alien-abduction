@@ -33,4 +33,3 @@ lib/x11
 *.os
 .sconsign.dblite
 api.json
-*.png.import
