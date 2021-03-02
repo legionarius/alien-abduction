@@ -13,7 +13,10 @@
 #include <KinematicBody2D.hpp>
 #include <KinematicCollision2D.hpp>
 #include <Math.hpp>
+#include <Position2D.hpp>
 #include <Ref.hpp>
+#include <SceneTree.hpp>
+#include <Viewport.hpp>
 
 namespace godot {
 
@@ -33,6 +36,8 @@ class Player : public KinematicBody2D {
 	const Vector2 floor = Vector2(0, -1);
 
 public:
+	void reset_position();
+
 	static void _register_methods();
 	void _init();
 	void _ready();

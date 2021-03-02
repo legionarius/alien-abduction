@@ -708,4 +708,6 @@ add_executable(
 		src/Player.cpp
 		src/Level.cpp
 		src/TitleScreen.cpp
-		src/MainScene.cpp src/MainScene.h)
+		src/MainScene.cpp
+		src/FadeScreen.cpp
+)
