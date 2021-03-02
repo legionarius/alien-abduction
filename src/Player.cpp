@@ -42,6 +42,11 @@ void Player::_physics_process(const real_t delta) {
 	move_and_slide(motion, floor);
 }
 
+void Player::reset_position() {
+	motion.x = 0;
+	set_position(Vector2::ZERO);
+}
+
 void Player::_init() {
 	impulse = 0.0;
 	impulse_time = 0.0;
@@ -51,7 +56,7 @@ void Player::_init() {
 	generate_impulse = false;
 	_gravity = 30;
 	_inertia = 2.0;
-	_jump_force = Vector2(600.0, 1000.0);
+	_jump_force = Vector2(700.0, 1000.0);
 }
 
 void Player::_ready() {
@@ -63,6 +68,7 @@ void Player::_register_methods() {
 	register_method("_ready", &Player::_ready);
 	register_method("_physics_process", &Player::_physics_process);
 	register_method("_input", &Player::_input);
+	register_method("reset_position", &Player::reset_position);
 	register_property("gravity", &Player::_gravity, 30.f);
 	register_property("inertia", &Player::_inertia, 2.f);
 	register_property("jump_force", &Player::_jump_force, Vector2(600.0, 1000.0));
