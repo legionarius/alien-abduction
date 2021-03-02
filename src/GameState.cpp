@@ -25,6 +25,7 @@ void GameState::_start_game() {
 
 void GameState::_load_level() {
 	if (current_level_id < level_count) {
+		Godot::print("load_level");
 		disconnect_level();
 		remove_level();
 		current_level_id += 1;
@@ -60,6 +61,7 @@ void GameState::remove_level() {
 }
 
 void GameState::connect_level() {
+	Godot::print("level_started");
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	emit_signal("level_started");
 	//TODO:	level_node->get_child(0)->connect("level_started", this, );

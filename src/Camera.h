@@ -11,17 +11,22 @@
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
 
+#include "GameState.h"
+#include "Player.h"
+
 namespace godot {
 
 class Camera : public Camera2D {
 	GODOT_CLASS(Camera, Camera2D);
 
 	real_t _shift_from_bottom;
+	GameState *_gameState;
+	Player *_player;
 
+public:
 	void _start_focus_player();
 	void _end_focus_player();
 
-public:
 	// Godot methods
 	static void _register_methods();
 	void _init();
