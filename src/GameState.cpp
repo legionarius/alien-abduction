@@ -7,34 +7,27 @@
 using namespace godot;
 
 void GameState::_init() {
-	level_count = 1;
+	level_count = 2;
 	current_level_id = 0;
 }
 
-void GameState::_ready() {}
+void GameState::_ready() {
+}
 
 void GameState::_input(const Ref<InputEvent> event) {
-	Ref<InputEventKey> event_key = event;
-	if (!is_started && event_key.is_valid() && event_key->is_action_pressed("ui_accept")) {
-		Godot::print("Game Start !!!");
-		_start_game();
-	}
 }
 
 void GameState::_start_game() {
 	_load_level();
-	_spawn_player();
 	is_started = true;
 	emit_signal("_game_started");
 }
 
 void GameState::_load_level() {
 	if (current_level_id < level_count) {
-		_disconnect_level();
 		_remove_level();
 		current_level_id += 1;
 		_add_level(current_level_id);
-		_connect_level();
 	} else {
 		emit_signal("_game_finished");
 	}
@@ -51,6 +44,7 @@ void GameState::_add_level(int level_id) {
 	Ref<PackedScene> level_res = ResourceLoader::get_singleton()->load(level_path.c_str());
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	auto current_level = level_res->instance();
+	_connect_level(current_level);
 	level_node->add_child(current_level);
 }
 
@@ -58,24 +52,24 @@ void GameState::_remove_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	if (level_node->get_child_count() > 0) {
 		auto current_level = level_node->get_child(0);
+		_disconnect_level(current_level);
 		level_node->remove_child(current_level);
 	} else {
 		Godot::print("No level to remove");
 	}
 }
 
-void GameState::_connect_level() {
-	auto level_node = get_tree()->get_root()->get_node("World/Level");
+void GameState::_connect_level(Node *p_level) {
 	//TODO:	level_node->get_child(0)->connect("level_started", this, );
-	//TODO:	level_node->get_child(0)->connect("level_finished", this, );
+	p_level->connect("ready", this, "_spawn_player");
+	p_level->connect("level_finished", this, "_next_level");
+	// p_level->connect("level_started", this, )
 }
 
-void GameState::_disconnect_level() {
-	auto level_node = get_tree()->get_root()->get_node("World/Level");
-	if (level_node->get_child_count() > 0) {
-		auto current_level = level_node->get_child(0);
-		//TODO:	current_level->disconnect("level_started", this, );
-		//TODO:	current_level->disconnect("level_finished", this, );
+void GameState::_disconnect_level(Node *p_level) {
+	if (p_level != nullptr) {
+		//TODO:	p_level->disconnect("level_started", this, );
+		//TODO:	p_level->disconnect("level_finished", this, );
 	} else {
 		Godot::print("No level to disconnect");
 	}
@@ -87,29 +81,41 @@ void GameState::_spawn_player() {
 	auto spawn_point = current_level->get_node("PlayerStart");
 	if (spawn_point != nullptr) {
 		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Player.tscn");
-		Node *playerInstance = player_res->instance();
-		playerInstance->connect("ready", this, "_player_ready");
-		playerInstance->connect("tree_exited", this, "_player_remove");
-		spawn_point->add_child(playerInstance);
+		auto *player = player_res->instance();
+		player->connect("ready", this, "_player_ready");
+		spawn_point->add_child(player);
 	} else {
 		Godot::print("NO SPAWN POINT !");
 	}
+}
+
+void GameState::_next_level() {
+	emit_signal("camera_end_focus");
+	_remove_player_from_tree();
+	call_deferred("_load_level");
 }
 
 void GameState::_player_ready() {
 	emit_signal("camera_start_focus");
 }
 
-void GameState::_player_remove() {
-	emit_signal("camera_end_focus");
+void GameState::_remove_player_from_tree() {
+	auto *playerParentNode = get_tree()->get_root()->get_node("World/Level")->get_child(0)->get_node("PlayerStart");
+	if (playerParentNode != nullptr) {
+		if (playerParentNode->get_child_count() != 0) {
+			playerParentNode->get_child(0)->free();
+		}
+	}
 }
 
 void GameState::_register_methods() {
 	register_method("_init", &GameState::_init);
 	register_method("_ready", &GameState::_ready);
 	register_method("_input", &GameState::_input);
+	register_method("_spawn_player", &GameState::_spawn_player);
 	register_method("_player_ready", &GameState::_player_ready);
-	register_method("_player_remove", &GameState::_player_remove);
+	register_method("_next_level", &GameState::_next_level);
+	register_method("_load_level", &GameState::_load_level);
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
 	register_signal<GameState>("camera_start_focus");

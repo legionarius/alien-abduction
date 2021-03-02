@@ -27,15 +27,16 @@ class GameState : public Node {
 	std::string _get_level_path(int level_id);
 	void _load_level();
 	void _add_level(int level_id);
-	void _connect_level();
-	void _disconnect_level();
+	void _connect_level(Node *p_level);
+	void _disconnect_level(Node *p_level);
 	void _remove_level();
-	void _spawn_player();
+	void _remove_player_from_tree();
 
 public:
 	void _start_game();
+	void _spawn_player();
 	void _player_ready();
-	void _player_remove();
+	void _next_level();
 	static void _register_methods();
 	void _init();
 	void _ready();
