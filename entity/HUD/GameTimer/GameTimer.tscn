@@ -44,6 +44,7 @@ wait_time = 0.1
 position = Vector2( 64, 71 )
 scale = Vector2( 0.18, 0.18 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="GameTimerLabel" type="Label" parent="."]

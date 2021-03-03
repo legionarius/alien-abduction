@@ -34,7 +34,7 @@ void GameTimer::_process(const real_t delta) {
 		s = 0;
 	}
 
-	ms_string << std::setw(2) << std::setfill('0') << ms;
+	ms_string << ms << "0";
 	s_string << std::setw(2) << std::setfill('0') << s;
 	m_string << std::right << std::setw(2) << std::setfill('0') << m;
 	std::string timer_string = m_string.str() + ":" + s_string.str() + ":" + ms_string.str();
