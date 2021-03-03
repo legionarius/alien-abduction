@@ -40,7 +40,7 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 42.9557, 10 )
 
-[node name="Level01" type="Node2D"]
+[node name="Level02" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="PlayerStart" type="Position2D" parent="."]
@@ -55,7 +55,7 @@ shape = SubResource( 1 )
 [node name="FinishZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
-position = Vector2( 637.285, 126.398 )
+position = Vector2( 550.148, -296.291 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="FinishZone/CollisionShape2D"]
@@ -67,10 +67,22 @@ scale = Vector2( 0.5, 0.5 )
 tile_set = SubResource( 4 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 5, 5, 0, 65541, 3, 0, 131077, 3, 0, 196617, 5, 0, 262149, 0, 0, 262153, 3, 0, 327685, 0, 0, 327689, 3, 0, 393221, 0, 0, 458757, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0 )
+tile_data = PoolIntArray( -131061, 0, 0, -65530, 0, 0, -65525, 0, 0, 5, 5, 0, 6, 0, 0, 65541, 3, 0, 65542, 0, 0, 131077, 3, 0, 131081, 0, 0, 196617, 0, 0, 262149, 0, 0, 262153, 0, 0, 327685, 0, 0, 327689, 3, 0, 393221, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0 )
 
 [node name="CliffhangerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CliffhangerArea"]
 position = Vector2( 351.225, 254.33 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CliffhangerArea"]
+position = Vector2( 738.214, -130.771 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CliffhangerArea"]
+position = Vector2( 413.521, -57.1485 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CliffhangerArea"]
+position = Vector2( 606.071, 133.514 )
 shape = SubResource( 5 )

@@ -25,7 +25,7 @@ void UILevel::_incrementLevel() {
 	std::stringstream s_string;
 	s_string << "Level " << level_id;
 	std::string test = s_string.str();
-	
+
 	if (label != nullptr) {
 		label->set_text(test.c_str());
 	}
