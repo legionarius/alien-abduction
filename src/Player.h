@@ -6,6 +6,7 @@
 #define WEEKLY_GAMEJAM_190_PLAYER_H
 
 #include "BubbleControl.h"
+#include <Area2D.hpp>
 #include <Godot.hpp>
 #include <InputEvent.hpp>
 #include <InputEventKey.hpp>
@@ -24,19 +25,24 @@ class Player : public KinematicBody2D {
 	GODOT_CLASS(Player, KinematicBody2D);
 
 	BubbleControl *bubbleControl;
+	bool cliffhanger;
+	real_t _cliffhanger_time;
 	real_t impulse_time;
 	real_t impulse;
 	bool generate_impulse;
 	bool apply_impulse;
 	Vector2 motion;
 	Vector2 direction;
-	float _gravity;
-	float _inertia;
+	real_t _gravity;
+	real_t _bubble_gravity;
+	real_t _inertia;
 	Vector2 _jump_force;
+	real_t _climb_speed;
 	const Vector2 floor = Vector2(0, -1);
 
 public:
 	void reset_position();
+	void _activate_cliffhanger();
 
 	static void _register_methods();
 	void _init();
