@@ -11,6 +11,7 @@
 #include "MainScene.h"
 #include "Player.h"
 #include "TitleScreen.h"
+#include "UILevel.h"
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
 	godot::Godot::gdnative_init(o);
@@ -32,4 +33,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	godot::register_class<godot::TitleScreen>();
 	godot::register_class<godot::Player>();
 	godot::register_class<godot::GameTimer>();
+	godot::register_class<godot::UILevel>();
 }
