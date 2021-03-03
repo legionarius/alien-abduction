@@ -16,13 +16,26 @@ _global_script_class_icons={
 [application]
 
 config/name="Walk On Walls"
-run/main_scene="res://entity/MainScene/MainScene.tscn"
+run/main_scene="res://entity/TitleScreen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GameState="*res://entity/GameState/GameState.tscn"
 
+[debug]
+
+settings/stdout/print_fps=true
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
+[world]
+
+2d/cell_size=20

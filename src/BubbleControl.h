@@ -21,6 +21,7 @@ class BubbleControl : public Control {
 	uint16_t steps;
 	void _init_bubble_timer();
 	real_t bubble_time;
+	Vector2 oscillation;
 
 public:
 	Color outline_color;
@@ -30,6 +31,7 @@ public:
 
 	void _appear();
 	void _disappear();
+	void _set_oscillation(real_t generated);
 
 	// Godot methods
 	static void _register_methods();

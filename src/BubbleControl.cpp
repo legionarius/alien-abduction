@@ -13,7 +13,7 @@ void BubbleControl::_init() {
 void BubbleControl::_draw() {
 	_draw_circle_arc(get_position(), radius, outline_color);
 	draw_circle(get_position(), radius, fill_color);
-	Vector2 mouse_position = get_local_mouse_position().normalized() * Vector2(radius - 2, radius - 2);
+	Vector2 mouse_position = get_local_mouse_position().normalized() * oscillation;
 	draw_line(get_position(), mouse_position, line_color, 3.0, true);
 }
 
@@ -56,6 +56,7 @@ void BubbleControl::_disappear() {
 
 void BubbleControl::_ready() {
 	hide();
+	oscillation = Vector2(max_radius - 2, max_radius - 2);
 	Godot::print("Maximum radius = " + Utils::gdt_string(max_radius));
 	steps = max_radius / bubble_time;
 	_init_bubble_timer();
@@ -78,4 +79,8 @@ void BubbleControl::_register_methods() {
 	register_property("outline_color", &BubbleControl::outline_color, Color(1.f, 1.f, 1.f));
 	register_property("fill_color", &BubbleControl::fill_color, Color(1.f, 1.f, 1.f, 0.1f));
 	register_property("line_color", &BubbleControl::line_color, Color(0.f, 0.f, 0.f));
+}
+void BubbleControl::_set_oscillation(real_t generated) {
+	real_t absolute = std::abs(generated);
+	oscillation = Vector2(max_radius - 2, max_radius - 2) * absolute;
 }

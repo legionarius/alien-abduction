@@ -4,5 +4,5 @@
 
 [resource]
 resource_name = "GameState"
-class_name = "MainScene"
+class_name = "GameState"
 library = ExtResource( 1 )

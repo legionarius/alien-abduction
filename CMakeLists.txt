@@ -701,10 +701,14 @@ add_executable(
         godot-cpp/include/gen/XMLParser.hpp
         godot-cpp/include/gen/YSort.hpp
         src/gdlibrary.cpp
-        src/GameState.cpp
-        src/BubbleControl.cpp
-        src/Utils.cpp
-        src/Player.cpp
-        src/Level.cpp
+		src/Camera.cpp
+		src/GameState.cpp
+		src/BubbleControl.cpp
+		src/Utils.cpp
+		src/Player.cpp
+		src/Level.cpp
+		src/TitleScreen.cpp
+		src/MainScene.cpp
+		src/FadeScreen.cpp
         src/GameTimer.cpp
 )
