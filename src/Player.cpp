@@ -42,12 +42,15 @@ void Player::_physics_process(const real_t delta) {
 		motion.y += _gravity;
 	}
 
-	// Player should fall if colliding with a floor
-	// different from the bottom floor.
-	// Using -50 to be generous with the collision
-	// detection time.
-	if (is_on_floor() && get_position().y < -50.f) {
-		motion.x = direction.x * -40.0;
+	if (cliffhanger) {
+		// Give time to player to jump before
+		// making him fall.
+		if ((_cliffhanger_time += delta) > 0.5f) {
+			Godot::print("AAAAAAH ADRIENNE !");
+			motion.x = direction.x * -60.0;
+			cliffhanger = false;
+			_cliffhanger_time = 0;
+		}
 	}
 	// Player is stopped on floor
 	else if (is_on_floor() && !apply_impulse) {
@@ -56,8 +59,11 @@ void Player::_physics_process(const real_t delta) {
 
 	move_and_slide(motion, floor);
 
-	// Reset Impulse
 	if (apply_impulse) {
+		// Reset Cliffhanger
+		cliffhanger = false;
+		_cliffhanger_time = 0;
+		// Reset Impulse
 		apply_impulse = false;
 		impulse = 0.0;
 		impulse_time = 0.0;
@@ -80,11 +86,19 @@ void Player::_init() {
 	_bubble_gravity = 10;
 	_inertia = 2.0;
 	_climb_speed = -150.0;
+	_cliffhanger_time = 0;
 	_jump_force = Vector2(800.0, 1200.0);
 }
 
 void Player::_ready() {
 	bubbleControl = Object::cast_to<BubbleControl>(get_node("CollisionShape2D/Bubble"));
+	Area2D *area2d = Object::cast_to<Area2D>(get_parent()->get_parent()->get_node("CliffhangerArea"));
+	area2d->connect("body_entered", this, "_activate_cliffhanger");
+}
+
+void Player::_activate_cliffhanger() {
+	cliffhanger = true;
+	Godot::print("CLIFFHANGER YIPIKAY MOTHERFUCKER !");
 }
 
 void Player::_register_methods() {
@@ -93,6 +107,7 @@ void Player::_register_methods() {
 	register_method("_physics_process", &Player::_physics_process);
 	register_method("_input", &Player::_input);
 	register_method("reset_position", &Player::reset_position);
+	register_method("_activate_cliffhanger", &Player::_activate_cliffhanger);
 	register_property("gravity", &Player::_gravity, 30.f);
 	register_property("inertia", &Player::_inertia, 2.f);
 	register_property("climb_speed", &Player::_climb_speed, -150.f);

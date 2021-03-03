@@ -29,3 +29,6 @@ __meta__ = {
 
 [node name="JumpForce" type="Timer" parent="."]
 process_mode = 0
+
+[node name="Cliffhanger" type="Timer" parent="."]
+wait_time = 0.2
