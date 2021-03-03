@@ -17,7 +17,7 @@ include_directories(godot-cpp/include/core)
 include_directories(godot-cpp/include/gen)
 
 add_executable(
-		weekly-gamejam-190
+        weekly-gamejam-190
         godot-cpp/godot-headers/android/godot_android.h
         godot-cpp/godot-headers/arvr/godot_arvr.h
         godot-cpp/godot-headers/gdnative/aabb.h
@@ -710,4 +710,5 @@ add_executable(
 		src/TitleScreen.cpp
 		src/MainScene.cpp
 		src/FadeScreen.cpp
+        src/GameTimer.cpp
 )

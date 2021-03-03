@@ -6,6 +6,7 @@
 #include "Camera.h"
 #include "FadeScreen.h"
 #include "GameState.h"
+#include "GameTimer.h"
 #include "Level.h"
 #include "MainScene.h"
 #include "Player.h"
@@ -30,4 +31,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	godot::register_class<godot::MainScene>();
 	godot::register_class<godot::TitleScreen>();
 	godot::register_class<godot::Player>();
+	godot::register_class<godot::GameTimer>();
 }
