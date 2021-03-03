@@ -12,10 +12,10 @@ void TitleScreen::_init() {
 void TitleScreen::_ready() {
 	Button *exitBtn = Object::cast_to<Button>(get_node("MainMenu/VBoxContainer/Exit"));
 	Button *startBtn = Object::cast_to<Button>(get_node("MainMenu/VBoxContainer/Start"));
-	Button *settingsBtn = Object::cast_to<Button>(get_node("MainMenu/VBoxContainer/Settings"));
+	AnimationPlayer *animationPlayer = Object::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
+	animationPlayer->play("walk_across_galaxy");
 	exitBtn->connect("pressed", this, "_exit");
 	startBtn->connect("pressed", this, "_start");
-	settingsBtn->connect("pressed", this, "_navigate_to_settings");
 }
 
 void TitleScreen::_navigate_to_settings() {
