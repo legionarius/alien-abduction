@@ -47,6 +47,7 @@ void GameState::_add_level(int level_id) {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
 	auto current_level = level_res->instance();
 	level_node->add_child(current_level);
+	emit_signal("_increment_level");
 }
 
 void GameState::_remove_level() {
@@ -61,6 +62,7 @@ void GameState::_remove_level() {
 
 void GameState::_connect_level() {
 	auto level_node = get_tree()->get_root()->get_node("World/Level");
+
 	//TODO:	level_node->get_child(0)->connect("level_started", this, );
 	//TODO:	level_node->get_child(0)->connect("level_finished", this, );
 }
@@ -107,6 +109,7 @@ void GameState::_register_methods() {
 	register_method("_player_remove", &GameState::_player_remove);
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
+	register_signal<GameState>("_increment_level");
 	register_signal<GameState>("camera_start_focus");
 	register_signal<GameState>("camera_end_focus");
 }
