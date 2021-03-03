@@ -31,15 +31,37 @@ void Player::_physics_process(const real_t delta) {
 		direction = get_local_mouse_position().normalized();
 		motion.x = direction.x * (_jump_force.x * std::abs(impulse));
 		motion.y = direction.y * std::abs(impulse) * _jump_force.y;
+	}
+
+	if (is_on_wall() && apply_impulse) {
+		motion.y += _bubble_gravity;
+	} else if (is_on_wall() && !apply_impulse) {
+		motion.y = _climb_speed;
+		motion.x = direction.x;
+	} else {
+		motion.y += _gravity;
+	}
+
+	// Player should fall if colliding with a floor
+	// different from the bottom floor.
+	// Using -50 to be generous with the collision
+	// detection time.
+	if (is_on_floor() && get_position().y < -50.f) {
+		motion.x = direction.x * -40.0;
+	}
+	// Player is stopped on floor
+	else if (is_on_floor() && !apply_impulse) {
+		motion.x = 0;
+	}
+
+	move_and_slide(motion, floor);
+
+	// Reset Impulse
+	if (apply_impulse) {
 		apply_impulse = false;
 		impulse = 0.0;
 		impulse_time = 0.0;
 	}
-
-	motion.y += _gravity;
-	motion.x -= motion.x * _inertia * std::abs(direction.x) * delta;
-
-	move_and_slide(motion, floor);
 }
 
 void Player::reset_position() {
@@ -55,8 +77,10 @@ void Player::_init() {
 	apply_impulse = false;
 	generate_impulse = false;
 	_gravity = 30;
+	_bubble_gravity = 10;
 	_inertia = 2.0;
-	_jump_force = Vector2(700.0, 1000.0);
+	_climb_speed = -150.0;
+	_jump_force = Vector2(800.0, 1200.0);
 }
 
 void Player::_ready() {
@@ -71,5 +95,6 @@ void Player::_register_methods() {
 	register_method("reset_position", &Player::reset_position);
 	register_property("gravity", &Player::_gravity, 30.f);
 	register_property("inertia", &Player::_inertia, 2.f);
-	register_property("jump_force", &Player::_jump_force, Vector2(600.0, 1000.0));
+	register_property("climb_speed", &Player::_climb_speed, -150.f);
+	register_property("jump_force", &Player::_jump_force, Vector2(800.0, 1200.0));
 }

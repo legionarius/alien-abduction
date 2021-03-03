@@ -30,9 +30,11 @@ class Player : public KinematicBody2D {
 	bool apply_impulse;
 	Vector2 motion;
 	Vector2 direction;
-	float _gravity;
-	float _inertia;
+	real_t _gravity;
+	real_t _bubble_gravity;
+	real_t _inertia;
 	Vector2 _jump_force;
+	real_t _climb_speed;
 	const Vector2 floor = Vector2(0, -1);
 
 public:
