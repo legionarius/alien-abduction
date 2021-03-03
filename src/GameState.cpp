@@ -46,6 +46,7 @@ void GameState::_add_level(int level_id) {
 	auto current_level = level_res->instance();
 	_connect_level(current_level);
 	level_node->add_child(current_level);
+	emit_signal("_increment_level");
 }
 
 void GameState::_remove_level() {
@@ -118,6 +119,7 @@ void GameState::_register_methods() {
 	register_method("_load_level", &GameState::_load_level);
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
+	register_signal<GameState>("_increment_level");
 	register_signal<GameState>("camera_start_focus");
 	register_signal<GameState>("camera_end_focus");
 }
