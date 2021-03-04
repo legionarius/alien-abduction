@@ -91,6 +91,7 @@ void GameState::_spawn_player() {
 }
 
 void GameState::_next_level() {
+	emit_signal("_show_transition_screen");
 	emit_signal("camera_end_focus");
 	_remove_player_from_tree();
 	call_deferred("_load_level");
@@ -120,6 +121,7 @@ void GameState::_register_methods() {
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
 	register_signal<GameState>("_increment_level");
+	register_signal<GameState>("_show_transition_screen");
 	register_signal<GameState>("camera_start_focus");
 	register_signal<GameState>("camera_end_focus");
 }
