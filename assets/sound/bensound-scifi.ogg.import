@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-scifi.ogg-479ea1f4552f60342c4f0a4637edef5b.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/bensound-scifi.ogg"
+dest_files=[ "res://.import/bensound-scifi.ogg-479ea1f4552f60342c4f0a4637edef5b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

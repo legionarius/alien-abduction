@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entity/MainScene/MainScene.gdns" type="Script" id=1]
 [ext_resource path="res://entity/MainScene/Camera.gdns" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://entity/MainScene/FadeScreen.gdns" type="Script" id=4]
 [ext_resource path="res://entity/HUD/GameTimer/GameTimer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entity/HUD/UILevel/UILevel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sound/AdhesiveWombat - Overdrive.ogg" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in_fade_out"
@@ -75,3 +76,7 @@ margin_left = 306.884
 margin_top = -278.027
 margin_right = 306.884
 margin_bottom = -278.027
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true

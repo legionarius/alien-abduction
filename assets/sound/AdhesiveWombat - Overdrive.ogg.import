@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AdhesiveWombat - Overdrive.ogg-38f0d36794e1bfe213eb495b4fc58fdd.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/AdhesiveWombat - Overdrive.ogg"
+dest_files=[ "res://.import/AdhesiveWombat - Overdrive.ogg-38f0d36794e1bfe213eb495b4fc58fdd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
