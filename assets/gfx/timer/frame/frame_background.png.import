@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilesheet.png-08796d455617b05cc9e378ac73458f66.stex"
+path="res://.import/frame_background.png-1942a9fe1bc1d069389e4d406f3257b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/tilesheet.png"
-dest_files=[ "res://.import/tilesheet.png-08796d455617b05cc9e378ac73458f66.stex" ]
+source_file="res://assets/gfx/timer/frame/frame_background.png"
+dest_files=[ "res://.import/frame_background.png-1942a9fe1bc1d069389e4d406f3257b2.stex" ]
 
 [params]
 

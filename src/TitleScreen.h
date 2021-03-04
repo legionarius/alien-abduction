@@ -6,6 +6,7 @@
 #define GAMEJAM_TRAINING_TITLESCREEN_H
 
 #include "GameState.h"
+#include <AnimationPlayer.hpp>
 #include <Button.hpp>
 #include <Control.hpp>
 #include <Godot.hpp>
