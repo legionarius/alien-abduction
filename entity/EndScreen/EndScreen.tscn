@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/MainScene/run_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://entity/EndScreen/Time.gdns" type="Script" id=2]
+
+[node name="TransitionScreen" type="Node2D"]
+
+[node name="TransitionRect" type="ColorRect" parent="."]
+margin_top = 2.37842
+margin_right = 1029.0
+margin_bottom = 601.378
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+margin_left = 441.951
+margin_top = 327.0
+margin_right = 516.951
+margin_bottom = 344.0
+custom_colors/font_color = Color( 0.811765, 0.0470588, 0.0470588, 1 )
+text = "ieuaieaieai"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransitionLabel" type="Label" parent="."]
+margin_left = 412.108
+margin_top = 246.053
+margin_right = 653.108
+margin_bottom = 317.053
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.968627, 0.968627, 0.968627, 1 )
+text = "VICTORY"
+__meta__ = {
+"_edit_use_anchors_": false
+}

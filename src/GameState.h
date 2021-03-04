@@ -5,9 +5,12 @@
 #ifndef GAMEJAM_TRAINING_GAMESTATE_H
 #define GAMEJAM_TRAINING_GAMESTATE_H
 
+#include "TimeLabel.h"
 #include <Godot.hpp>
 #include <InputEventKey.hpp>
+#include <Label.hpp>
 #include <Node.hpp>
+#include <Node2D.hpp>
 #include <PackedScene.hpp>
 #include <Ref.hpp>
 #include <ResourceLoader.hpp>

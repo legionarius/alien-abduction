@@ -3,20 +3,21 @@
 //
 
 #include "GameTimer.h"
-#include <iomanip>
 
 using namespace godot;
 
 void GameTimer::_init() {
+	ms = 0;
+	s = 0;
+	m = 0;
 }
 
 void GameTimer::_ready() {
 	label = Object::cast_to<Label>(get_node("GameTimerLabel"));
 	timer = Object::cast_to<Timer>(get_node("GameClock"));
-	ms = 0;
-	s = 0;
-	m = 0;
-	_start_timer();
+	GameState *gameState = Object::cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
+	gameState->connect("_increment_level", this, "_start_timer");
+	gameState->connect("_game_finished", this, "_stop_timer");
 }
 
 void GameTimer::_process(const real_t delta) {
@@ -49,12 +50,8 @@ void GameTimer::_start_timer() {
 	timer->start();
 }
 
-void GameTimer::_pause_timer() {
-	timer->stop();
-}
-
-String GameTimer::GetElapsedTime() {
-	return String::num_int64(m) + ":" + String::num_int64(s) + ":" + String::num_int64(ms);
+void GameTimer::_stop_timer() {
+	timer->set_paused(true);
 }
 
 void GameTimer::_register_methods() {
@@ -62,6 +59,6 @@ void GameTimer::_register_methods() {
 	register_method("_ready", &GameTimer::_ready);
 	register_method("_process", &GameTimer::_process);
 	register_method("_on_Timer_timeout", &GameTimer::_on_Timer_timeout);
-	register_signal<GameTimer>("timer_started");
-	register_signal<GameTimer>("timer_paused");
+	register_method("_start_timer", &GameTimer::_start_timer);
+	register_method("_stop_timer", &GameTimer::_stop_timer);
 }
