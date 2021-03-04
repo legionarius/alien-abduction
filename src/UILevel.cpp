@@ -11,10 +11,8 @@ void UILevel::_init() {}
 void UILevel::_process(const real_t delta) {}
 
 void UILevel::_ready() {
-
 	level_id = 0;
 	label = Object::cast_to<Label>(get_node("UILevelLabel"));
-	label->set_text("teeeeeeeeeeeeee");
 	gameState = Object::cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
 	if (gameState != nullptr) {
 		gameState->connect("_increment_level", this, "_incrementLevel");
