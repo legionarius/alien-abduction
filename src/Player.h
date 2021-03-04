@@ -6,6 +6,7 @@
 #define WEEKLY_GAMEJAM_190_PLAYER_H
 
 #include "BubbleControl.h"
+#include <AnimatedSprite.hpp>
 #include <Area2D.hpp>
 #include <Godot.hpp>
 #include <InputEvent.hpp>
@@ -25,6 +26,7 @@ class Player : public KinematicBody2D {
 	GODOT_CLASS(Player, KinematicBody2D);
 
 	BubbleControl *bubbleControl;
+	AnimatedSprite *animatedSprite;
 	bool cliffhanger;
 	real_t _cliffhanger_time;
 	real_t impulse_time;
