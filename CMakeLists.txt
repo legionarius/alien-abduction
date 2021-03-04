@@ -712,5 +712,5 @@ add_executable(
         src/FadeScreen.cpp
         src/GameTimer.cpp
         src/UILevel.cpp
-        src/TransitionScreen.cpp
+        src/TimeLabel.cpp
 )

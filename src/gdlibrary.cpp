@@ -10,8 +10,8 @@
 #include "Level.h"
 #include "MainScene.h"
 #include "Player.h"
+#include "TimeLabel.h"
 #include "TitleScreen.h"
-#include "TransitionScreen.h"
 #include "UILevel.h"
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
@@ -35,5 +35,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	godot::register_class<godot::Player>();
 	godot::register_class<godot::GameTimer>();
 	godot::register_class<godot::UILevel>();
-	godot::register_class<godot::TransitionScreen>();
+	godot::register_class<godot::TimeLabel>();
 }

@@ -30,6 +30,12 @@ void GameState::_load_level() {
 		_add_level(current_level_id);
 	} else {
 		emit_signal("_game_finished");
+		Label *label = Object::cast_to<Label>(get_tree()->get_root()->get_node("World/Camera2D/GameTimer/GameTimerLabel"));
+		Ref<PackedScene> endScreen = ResourceLoader::get_singleton()->load("entity/EndScreen/EndScreen.tscn");
+		Node *endScreenNode = endScreen->instance();
+		TimeLabel *timeLabel = Object::cast_to<TimeLabel>(endScreenNode->get_node("Time"));
+		timeLabel->_set_time_label(label->get_text());
+		get_tree()->_change_scene(endScreenNode);
 	}
 }
 
@@ -55,6 +61,7 @@ void GameState::_remove_level() {
 		auto current_level = level_node->get_child(0);
 		_disconnect_level(current_level);
 		level_node->remove_child(current_level);
+		current_level->queue_free();
 	} else {
 		Godot::print("No level to remove");
 	}
@@ -91,7 +98,6 @@ void GameState::_spawn_player() {
 }
 
 void GameState::_next_level() {
-	emit_signal("_show_transition_screen");
 	emit_signal("camera_end_focus");
 	_remove_player_from_tree();
 	call_deferred("_load_level");
@@ -121,7 +127,6 @@ void GameState::_register_methods() {
 	register_signal<GameState>("_game_started");
 	register_signal<GameState>("_game_finished");
 	register_signal<GameState>("_increment_level");
-	register_signal<GameState>("_show_transition_screen");
 	register_signal<GameState>("camera_start_focus");
 	register_signal<GameState>("camera_end_focus");
 }
