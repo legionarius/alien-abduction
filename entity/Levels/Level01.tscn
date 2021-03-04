@@ -43,6 +43,16 @@ extents = Vector2( 42.9557, 10 )
 [node name="Level01" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -355.0
+margin_top = -606.0
+margin_right = 1524.0
+margin_bottom = 741.0
+color = Color( 0.0313726, 0.235294, 0.356863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PlayerStart" type="Position2D" parent="."]
 position = Vector2( 521.111, 520.459 )
 
