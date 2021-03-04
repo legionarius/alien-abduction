@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://entity/MainScene/MainScene.gdns" type="Script" id=1]
 [ext_resource path="res://entity/MainScene/Camera.gdns" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://entity/MainScene/FadeScreen.gdns" type="Script" id=4]
 [ext_resource path="res://entity/HUD/GameTimer/GameTimer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entity/HUD/UILevel/UILevel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entity/MainScene/TransitionScreen.gdns" type="Script" id=7]
+[ext_resource path="res://assets/font/Pixellari.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in_fade_out"
@@ -21,6 +23,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 1.0, 0.521, 0.0, 0.352, 1.0 ]
 }
+
+[sub_resource type="Animation" id=3]
+resource_name = "transition_screen"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeScreen/ColorRect:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.9, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.521, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TransitionScreen/TransitionLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2, 3.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28.6526, 329.061 )
@@ -45,6 +79,32 @@ margin_top = -24.0
 margin_right = 1088.0
 margin_bottom = 624.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransitionScreen" type="AnimationPlayer" parent="Camera2D"]
+anims/transition_screen = SubResource( 3 )
+script = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/TransitionScreen"]
+material = ExtResource( 3 )
+margin_left = -64.0
+margin_top = -24.0
+margin_right = 1088.0
+margin_bottom = 624.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransitionLabel" type="Label" parent="Camera2D/TransitionScreen"]
+visible = false
+margin_left = 423.732
+margin_top = 295.756
+margin_right = 719.732
+margin_bottom = 366.756
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
