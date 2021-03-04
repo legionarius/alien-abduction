@@ -65,7 +65,7 @@ shape = SubResource( 1 )
 [node name="FinishZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
-position = Vector2( 637.285, 126.398 )
+position = Vector2( 643.635, 24.8043 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="FinishZone/CollisionShape2D"]
