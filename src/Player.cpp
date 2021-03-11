@@ -30,7 +30,7 @@ void Player::_physics_process(const real_t delta) {
 	if (apply_impulse) {
 		direction = get_local_mouse_position().normalized();
 		motion.y = direction.y * std::abs(impulse) * _jump_force.y;
-		animationPlayer->play("Jump");
+		animationPlayer->play("JumpToWall");
 
 		if(isScaleXInversed) {
 			motion.x = - direction.x * (_jump_force.x * std::abs(impulse));
