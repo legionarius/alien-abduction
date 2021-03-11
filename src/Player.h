@@ -40,7 +40,7 @@ class Player : public KinematicBody2D {
 	real_t _inertia;
 	Vector2 _jump_force;
 	real_t _climb_speed;
-	bool isScaleInversed = false;
+	bool isScaleXInversed = false;
 	bool isOrientedRight = true;
 	const Vector2 floor = Vector2(0, -1);
 

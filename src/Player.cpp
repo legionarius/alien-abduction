@@ -28,9 +28,15 @@ void Player::_physics_process(const real_t delta) {
 	}
 
 	if (apply_impulse) {
-		if(isScaleInversed) {
+		direction = get_local_mouse_position().normalized();
+		motion.y = direction.y * std::abs(impulse) * _jump_force.y;
+		animationPlayer->play("Idle");
+
+		if(isScaleXInversed) {
+			motion.x = - direction.x * (_jump_force.x * std::abs(impulse));
+
 			if (direction.x > 0) {
-				Godot::print("gauche");
+				// Gauche
 				if (isOrientedRight){
 					_flip_player();
 					isOrientedRight = false;
@@ -38,14 +44,17 @@ void Player::_physics_process(const real_t delta) {
 			}
 
 			else if (direction.x < 0) {
-				Godot::print("droite");
+				// Droite
 				if (!isOrientedRight){
 					_flip_player();
 					isOrientedRight = true;
 				}
 			}
 		} else {
+			motion.x = direction.x * (_jump_force.x * std::abs(impulse));
+
 			if (direction.x < 0) {
+				//Gauche
 				Godot::print("gauche");
 				if (isOrientedRight){
 					_flip_player();
@@ -54,18 +63,13 @@ void Player::_physics_process(const real_t delta) {
 			}
 
 			else if (direction.x > 0) {
-				Godot::print("droite");
+				// Droite
 				if (!isOrientedRight){
 					_flip_player();
 					isOrientedRight = true;
 				}
 			}
 		}
-
-		direction = get_local_mouse_position().normalized();
-		motion.x = direction.x * (_jump_force.x * std::abs(impulse));
-		motion.y = direction.y * std::abs(impulse) * _jump_force.y;
-		animationPlayer->play("Idle");
 	}
 
 	if (is_on_wall() && apply_impulse) {
@@ -113,7 +117,7 @@ void Player::reset_position() {
 }
 void Player::_flip_player() {
 	this->apply_scale(Vector2(-1,1));
-	isScaleInversed = !isScaleInversed;
+	isScaleXInversed = !isScaleXInversed;
 }
 
 void Player::_init() {
