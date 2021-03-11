@@ -66,7 +66,7 @@ __meta__ = {
 }
 
 [node name="PlayerStart" type="Position2D" parent="."]
-position = Vector2( 482.855, 338.961 )
+position = Vector2( 443.899, 329.971 )
 
 [node name="StartZone" type="Area2D" parent="."]
 position = Vector2( -31.1127, 43.8406 )
