@@ -1,50 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entity/TitleScreen/TitleScreen.gdns" type="Script" id=1]
 [ext_resource path="res://assets/MainScene/run_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/TitleScreen/bg_title.jpg" type="Texture" id=3]
-[ext_resource path="res://assets/gfx/player/player_mouvement_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/gfx/player/player_mouvement_4.png" type="Texture" id=5]
-[ext_resource path="res://assets/gfx/player/player_mouvement_3.png" type="Texture" id=6]
-[ext_resource path="res://assets/gfx/player/player_mouvement_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/TitleScreen/bg_titlescreen.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/sound/bensound-scifi.ogg" type="AudioStream" id=8]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 9.0
-} ]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.054902, 0.12549, 0.0666667, 1 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "walk_across_galaxy"
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -29.644, 555 ), Vector2( 350, 555 ), Vector2( 700, 555 ), Vector2( 1050, 555 ), Vector2( 700, 555 ), Vector2( 350, 555 ), Vector2( -29.644, 555 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.654902, 0.466667, 0.364706, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.654902, 0.466667, 0.364706, 1 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -55,7 +23,8 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
+margin_left = -2.0
+margin_right = 1022.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 expand = true
@@ -83,6 +52,7 @@ margin_left = 351.0
 margin_top = 283.0
 margin_right = 681.0
 margin_bottom = 403.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,26 +69,20 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="MainMenu/VBoxContainer"]
-margin_top = 37.0
+margin_top = 43.0
 margin_right = 249.0
 margin_bottom = 57.0
+custom_styles/normal = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Start"
 
 [node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
 margin_top = 61.0
 margin_right = 249.0
-margin_bottom = 81.0
+margin_bottom = 75.0
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Exit"
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -29.644, 555 )
-scale = Vector2( 0.457143, 0.43505 )
-frames = SubResource( 1 )
-frame = 1
-playing = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/walk_across_galaxy = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )

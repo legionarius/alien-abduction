@@ -9,6 +9,7 @@
 #include <AnimationPlayer.hpp>
 #include <Button.hpp>
 #include <Control.hpp>
+#include <KinematicBody2D.hpp>
 #include <Godot.hpp>
 #include <InputEvent.hpp>
 #include <InputEventKey.hpp>

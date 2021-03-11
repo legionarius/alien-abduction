@@ -31,21 +31,22 @@ void Player::_physics_process(const real_t delta) {
 		direction = get_local_mouse_position().normalized();
 		motion.x = direction.x * (_jump_force.x * std::abs(impulse));
 		motion.y = direction.y * std::abs(impulse) * _jump_force.y;
-		animatedSprite->play("jump");
+		animationPlayer->play("Idle");
 	}
 
-	if (direction.x < 0) {
-		animatedSprite->set_flip_h(true);
-	}
-
-	if (direction.x > 0) {
-		animatedSprite->set_flip_h(false);
-	}
+//	if (direction.x < 0) {
+//		Godot::print(direction.x);
+//		this->set_scale(Vector2(-1,1));
+//	}
+//
+//	if (direction.x > 0) {
+//		this->set_scale(Vector2(1,1));
+//	}
 
 	if (is_on_wall() && apply_impulse) {
 		motion.y += _bubble_gravity;
 	} else if (is_on_wall() && !apply_impulse) {
-		animatedSprite->play("run");
+		animationPlayer->play("WalkOnWall");
 		motion.y = _climb_speed;
 		motion.x = direction.x;
 	} else {
@@ -65,7 +66,7 @@ void Player::_physics_process(const real_t delta) {
 	// Player is stopped on floor
 	else if (is_on_floor() && !apply_impulse) {
 		motion.x = 0;
-		animatedSprite->play("idle");
+		animationPlayer->play("Idle");
 	}
 
 	move_and_slide(motion, floor);
@@ -103,8 +104,8 @@ void Player::_init() {
 
 void Player::_ready() {
 	bubbleControl = Object::cast_to<BubbleControl>(get_node("CollisionShape2D/Bubble"));
-	animatedSprite = Object::cast_to<AnimatedSprite>(get_node("AnimatedSprite"));
-	animatedSprite->play("idle");
+	animationPlayer = Object::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
+	animationPlayer->play("Idle");
 	Area2D *area2d = Object::cast_to<Area2D>(get_parent()->get_parent()->get_node("CliffhangerArea"));
 	area2d->connect("body_entered", this, "_activate_cliffhanger");
 }

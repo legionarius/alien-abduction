@@ -88,7 +88,7 @@ void GameState::_spawn_player() {
 	auto current_level = level_node->get_child(0);
 	auto spawn_point = current_level->get_node("PlayerStart");
 	if (spawn_point != nullptr) {
-		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Player.tscn");
+		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Character.tscn");
 		auto *player = player_res->instance();
 		player->connect("ready", this, "_player_ready");
 		spawn_point->add_child(player);
