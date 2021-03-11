@@ -35,16 +35,18 @@ class Player : public KinematicBody2D {
 	bool apply_impulse;
 	Vector2 motion;
 	Vector2 direction;
-	Vector2 scale;
 	real_t _gravity;
 	real_t _bubble_gravity;
 	real_t _inertia;
 	Vector2 _jump_force;
 	real_t _climb_speed;
+	bool isScaleInversed = false;
+	bool isOrientedRight = true;
 	const Vector2 floor = Vector2(0, -1);
 
 public:
 	void reset_position();
+	void _flip_player();
 	void _activate_cliffhanger();
 
 	static void _register_methods();
