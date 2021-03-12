@@ -1768,7 +1768,6 @@ anims/Walk = SubResource( 3 )
 anims/WalkOnWall = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 10.3766, -1.38429 )
 shape = SubResource( 5 )
 

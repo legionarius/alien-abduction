@@ -55,7 +55,6 @@ void Player::_physics_process(const real_t delta) {
 
 			if (direction.x < 0) {
 				//Gauche
-				Godot::print("gauche");
 				if (isOrientedRight){
 					_flip_player();
 					isOrientedRight = false;
