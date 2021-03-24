@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/TitleScreen/button_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/sound/bensound-scifi.ogg" type="AudioStream" id=8]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0705882, 0.176471, 0.101961, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -30,7 +30,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0705882, 0.176471, 0.101961, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -42,7 +42,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.654902, 0.466667, 0.364706, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -63,8 +63,8 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -1.10907
-margin_right = 1022.89
+margin_left = -0.268128
+margin_right = 1023.73
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 expand = true
@@ -74,13 +74,15 @@ __meta__ = {
 }
 
 [node name="GameTitle" type="Label" parent="."]
-margin_left = 221.93
-margin_top = 26.6207
-margin_right = 835.93
-margin_bottom = 144.621
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -307.0
+margin_top = 50.0
+margin_right = 307.0
+margin_bottom = 118.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.980392, 0.964706, 0.964706, 1 )
-text = "Alien Abduction"
+text = "alien abduction"
 align = 1
 valign = 1
 __meta__ = {
@@ -108,25 +110,25 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_top = 40.0
-margin_right = 299.0
-margin_bottom = 97.0
-custom_styles/hover = SubResource( 4 )
+margin_top = 64.0
+margin_right = 300.0
+margin_bottom = 98.0
+custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.760784, 0.576471, 0.396078, 1 )
 custom_colors/font_color_pressed = Color( 0.760784, 0.576471, 0.396078, 1 )
-text = "Start"
+text = "start"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-margin_top = 101.0
-margin_right = 299.0
-margin_bottom = 158.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 136.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.760784, 0.576471, 0.396078, 1 )
 custom_colors/font_color_pressed = Color( 0.760784, 0.576471, 0.396078, 1 )
-text = "Exit"
+text = "exit"
