@@ -30,7 +30,7 @@ void GameState::_load_level() {
 		_add_level(current_level_id);
 	} else {
 		emit_signal("_game_finished");
-		Label *label = Object::cast_to<Label>(get_tree()->get_root()->get_node("World/Camera2D/GameTimer/GameTimerLabel"));
+		Label *label = Object::cast_to<Label>(get_tree()->get_root()->get_node("World/HUDLayer/GameTimer/GameTimerLabel"));
 		Ref<PackedScene> endScreen = ResourceLoader::get_singleton()->load("entity/EndScreen/EndScreen.tscn");
 		Node *endScreenNode = endScreen->instance();
 		TimeLabel *timeLabel = Object::cast_to<TimeLabel>(endScreenNode->get_node("Time"));
