@@ -52,8 +52,12 @@ void Player::_physics_process(const real_t delta) {
 	} else if (is_on_wall() && !apply_impulse) {
 		animationPlayer->play("WalkOnWall");
 		motion.y = _climb_speed;
-		motion.x = direction.x;
-	} else {
+		if(direction.x > 0){
+			motion.x = direction.x + 10;
+		} else {
+			motion.x = direction.x - 10;
+		}
+	} else if(!is_on_floor() && !apply_impulse) {
 		motion.y += _gravity;
 	}
 
@@ -103,7 +107,7 @@ void Player::_init() {
 	_gravity = 30;
 	_bubble_gravity = 10;
 	_inertia = 2.0;
-	_climb_speed = -150.0;
+	_climb_speed = -170.0;
 	_cliffhanger_time = 0;
 	_jump_force = Vector2(800.0, 1200.0);
 }
