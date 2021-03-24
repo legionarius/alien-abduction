@@ -7,14 +7,14 @@
 [ext_resource path="res://assets/gfx/texture.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 585.588, 10 )
+extents = Vector2( 585.588, 36.944 )
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 93.403
 height = 0.0
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 128, 128, 0.326019, 128, 0.326019, 0.326019, 128, 0.326019 )
+points = PoolVector2Array( 128, 128, 0.326019, 128, 0, 0, 128, 0.326019 )
 
 [sub_resource type="TileSet" id=4]
 0/name = "texture.png 0"
@@ -72,7 +72,7 @@ position = Vector2( 443.899, 329.971 )
 position = Vector2( -31.1127, 43.8406 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartZone"]
-position = Vector2( 545.723, 483.948 )
+position = Vector2( 529.242, 602.314 )
 shape = SubResource( 1 )
 
 [node name="FinishZone" type="Area2D" parent="."]
@@ -95,5 +95,5 @@ tile_data = PoolIntArray( 5, 5, 0, 10, 0, 0, 11, 0, 0, 65541, 3, 0, 65546, 0, 0,
 [node name="CliffhangerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CliffhangerArea"]
-position = Vector2( 702.976, 1.5405 )
+position = Vector2( 700.064, 3.17633 )
 shape = SubResource( 5 )

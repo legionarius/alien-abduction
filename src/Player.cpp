@@ -3,17 +3,16 @@
 //
 
 #include "Player.h"
+#include <sstream>
 
 using namespace godot;
 
 void Player::_input(const Ref<InputEvent> event) {
 	Ref<InputEventMouseButton> event_mouse = event;
 	if (event_mouse.is_valid() && event_mouse->get_button_index() == 1 && event_mouse->is_pressed()) {
-		Godot::print("Show Bubble");
 		bubbleControl->_appear();
 		generate_impulse = true;
 	} else if (event_mouse.is_valid() && event_mouse->get_button_index() == 1 && !event_mouse->is_pressed()) {
-		Godot::print("Hide Bubble");
 		bubbleControl->_disappear();
 		apply_impulse = true;
 		generate_impulse = false;
@@ -30,43 +29,20 @@ void Player::_physics_process(const real_t delta) {
 	if (apply_impulse) {
 		direction = get_local_mouse_position().normalized();
 		motion.y = direction.y * std::abs(impulse) * _jump_force.y;
+		motion.x = direction.x * (_jump_force.x * std::abs(impulse));
 		animationPlayer->play("JumpToWall");
-
-		if(isScaleXInversed) {
-			motion.x = - direction.x * (_jump_force.x * std::abs(impulse));
-
-			if (direction.x > 0) {
-				// Gauche
-				if (isOrientedRight){
-					_flip_player();
-					isOrientedRight = false;
-				}
+		if (direction.x < 0) {
+			//Gauche
+			if (isOrientedRight){
+				_flip_player();
+				isOrientedRight = false;
 			}
-
-			else if (direction.x < 0) {
-				// Droite
-				if (!isOrientedRight){
-					_flip_player();
-					isOrientedRight = true;
-				}
-			}
-		} else {
-			motion.x = direction.x * (_jump_force.x * std::abs(impulse));
-
-			if (direction.x < 0) {
-				//Gauche
-				if (isOrientedRight){
-					_flip_player();
-					isOrientedRight = false;
-				}
-			}
-
-			else if (direction.x > 0) {
-				// Droite
-				if (!isOrientedRight){
-					_flip_player();
-					isOrientedRight = true;
-				}
+		}
+		else if (direction.x > 0) {
+			// Droite
+			if (!isOrientedRight){
+				_flip_player();
+				isOrientedRight = true;
 			}
 		}
 	}
@@ -85,7 +61,6 @@ void Player::_physics_process(const real_t delta) {
 		// Give time to player to jump before
 		// making him fall.
 		if ((_cliffhanger_time += delta) > 0.5f) {
-			Godot::print("AAAAAAH ADRIENNE !");
 			motion.x = direction.x * -60.0;
 			cliffhanger = false;
 			_cliffhanger_time = 0;
@@ -115,8 +90,7 @@ void Player::reset_position() {
 	set_position(Vector2::ZERO);
 }
 void Player::_flip_player() {
-	this->apply_scale(Vector2(-1,1));
-	isScaleXInversed = !isScaleXInversed;
+	playerShape->apply_scale(Vector2(-1,1));
 }
 
 void Player::_init() {
@@ -137,6 +111,7 @@ void Player::_init() {
 void Player::_ready() {
 	bubbleControl = Object::cast_to<BubbleControl>(get_node("CollisionShape2D/Bubble"));
 	animationPlayer = Object::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
+	playerShape = Object::cast_to<Node2D>(get_node("PlayerShape"));
 	animationPlayer->play("Idle");
 	Area2D *area2d = Object::cast_to<Area2D>(get_parent()->get_parent()->get_node("CliffhangerArea"));
 	area2d->connect("body_entered", this, "_activate_cliffhanger");

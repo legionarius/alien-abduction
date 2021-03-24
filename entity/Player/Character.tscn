@@ -4,11 +4,14 @@
 [ext_resource path="res://entity/BubbleControl/BubbleControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entity/Player/Player.gdns" type="Script" id=3]
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 73.2665, 109.092 )
+
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Skeleton2D/hip/chest/head:position")
+tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -20,7 +23,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3.36053, -36.9701 ), Vector2( 3.36053, -36.9701 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Skeleton2D/hip/chest/head:rotation_degrees")
+tracks/1/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -32,7 +35,7 @@ tracks/1/keys = {
 "values": [ -3.14934, 1.65766 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Skeleton2D/hip/chest/arm_right:position")
+tracks/2/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -44,7 +47,7 @@ tracks/2/keys = {
 "values": [ Vector2( -11.6577, -30.6214 ), Vector2( -11.6577, -30.6214 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Skeleton2D/hip/chest/arm_right:rotation_degrees")
+tracks/3/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -56,7 +59,7 @@ tracks/3/keys = {
 "values": [ 44.137, 43.4149 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:position")
+tracks/4/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -68,7 +71,7 @@ tracks/4/keys = {
 "values": [ Vector2( 3.73524, 33.2182 ), Vector2( 3.73524, 33.2182 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
+tracks/5/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -80,7 +83,7 @@ tracks/5/keys = {
 "values": [ 17.6261, 5.11992 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Skeleton2D/hip/chest:position")
+tracks/6/path = NodePath("PlayerShape/Skeleton2D/hip/chest:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -92,7 +95,7 @@ tracks/6/keys = {
 "values": [ Vector2( 17.0497, -22.6151 ), Vector2( 17.8906, -24.2969 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Skeleton2D/hip/chest:rotation_degrees")
+tracks/7/path = NodePath("PlayerShape/Skeleton2D/hip/chest:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -104,7 +107,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Skeleton2D/hip/chest/head/jaw:position")
+tracks/8/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -116,7 +119,7 @@ tracks/8/keys = {
 "values": [ Vector2( -2.05179, -19.1168 ), Vector2( -2.05179, -19.1168 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Skeleton2D/hip/chest/head/jaw:rotation_degrees")
+tracks/9/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -128,7 +131,7 @@ tracks/9/keys = {
 "values": [ 28.6465, 23.7386 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Skeleton2D/hip:position")
+tracks/10/path = NodePath("PlayerShape/Skeleton2D/hip:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -140,7 +143,7 @@ tracks/10/keys = {
 "values": [ Vector2( 431.219, 334.031 ), Vector2( 431.219, 334.031 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Skeleton2D/hip:rotation_degrees")
+tracks/11/path = NodePath("PlayerShape/Skeleton2D/hip:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -152,7 +155,7 @@ tracks/11/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:position")
+tracks/12/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -164,7 +167,7 @@ tracks/12/keys = {
 "values": [ Vector2( -31.4231, 20.7717 ), Vector2( -31.4231, 20.7717 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
+tracks/13/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -176,7 +179,7 @@ tracks/13/keys = {
 "values": [ 60.93, 51.4388 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Skeleton2D/hip/chest/arm_left:position")
+tracks/14/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -188,7 +191,7 @@ tracks/14/keys = {
 "values": [ Vector2( 12.6029, -24.2471 ), Vector2( 12.6029, -24.2471 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Skeleton2D/hip/chest/arm_left:rotation_degrees")
+tracks/15/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -200,7 +203,7 @@ tracks/15/keys = {
 "values": [ -8.1944, -9.13394 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Skeleton2D/hip/leg_left:position")
+tracks/16/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -212,7 +215,7 @@ tracks/16/keys = {
 "values": [ Vector2( -0.933395, 8.90393 ), Vector2( -0.933395, 8.90393 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Skeleton2D/hip/leg_left:rotation_degrees")
+tracks/17/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -224,7 +227,7 @@ tracks/17/keys = {
 "values": [ -64.9966, -64.9966 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:position")
+tracks/18/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -236,7 +239,7 @@ tracks/18/keys = {
 "values": [ Vector2( -19.3708, 47.3185 ), Vector2( -19.3708, 47.3185 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
+tracks/19/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -248,7 +251,7 @@ tracks/19/keys = {
 "values": [ 44.307, 44.307 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Skeleton2D/hip/leg_left/calf_left:position")
+tracks/20/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -260,7 +263,7 @@ tracks/20/keys = {
 "values": [ Vector2( -10.2938, 31.5341 ), Vector2( -10.2938, 31.5341 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
+tracks/21/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -272,7 +275,7 @@ tracks/21/keys = {
 "values": [ 49.6601, 49.6601 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Skeleton2D/hip/leg_right/calf_right:position")
+tracks/22/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -284,7 +287,7 @@ tracks/22/keys = {
 "values": [ Vector2( 26.8759, 28.9565 ), Vector2( 26.8759, 28.9565 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
+tracks/23/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -296,7 +299,7 @@ tracks/23/keys = {
 "values": [ 17.1956, 17.1956 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Skeleton2D/hip/leg_right:position")
+tracks/24/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -308,7 +311,7 @@ tracks/24/keys = {
 "values": [ Vector2( -9.57304, 6.68124 ), Vector2( -9.57304, 6.68124 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Skeleton2D/hip/leg_right:rotation_degrees")
+tracks/25/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:rotation_degrees")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -320,7 +323,7 @@ tracks/25/keys = {
 "values": [ 25.7058, 25.7058 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
+tracks/26/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -332,7 +335,7 @@ tracks/26/keys = {
 "values": [ Vector2( 34.6964, 0.292328 ), Vector2( 34.6964, 0.292328 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
+tracks/27/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -344,7 +347,7 @@ tracks/27/keys = {
 "values": [ 20.1821, 30.1318 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:position")
+tracks/28/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -356,7 +359,7 @@ tracks/28/keys = {
 "values": [ Vector2( 22.6632, 45.0033 ), Vector2( 22.6632, 45.0033 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
+tracks/29/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -368,7 +371,7 @@ tracks/29/keys = {
 "values": [ -10.0038, -10.0038 ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
+tracks/30/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -380,7 +383,7 @@ tracks/30/keys = {
 "values": [ Vector2( 40.8919, 3.25929 ), Vector2( 40.8919, 3.25929 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
+tracks/31/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -396,7 +399,7 @@ tracks/31/keys = {
 resource_name = "JumpToWall"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
+tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -408,7 +411,7 @@ tracks/0/keys = {
 "values": [ Vector2( 40.8919, 3.25929 ), Vector2( 40.8919, 3.25929 ), Vector2( 40.8919, 3.25929 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
+tracks/1/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -420,7 +423,7 @@ tracks/1/keys = {
 "values": [ 5.37968, 1.1, 16.3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:position")
+tracks/2/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -432,7 +435,7 @@ tracks/2/keys = {
 "values": [ Vector2( 3.73524, 33.2182 ), Vector2( 3.73524, 33.2182 ), Vector2( 3.73524, 33.2182 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
+tracks/3/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -444,7 +447,7 @@ tracks/3/keys = {
 "values": [ 17.6261, 16.5173, 40.9819 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Skeleton2D/hip/chest/arm_right:position")
+tracks/4/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -456,7 +459,7 @@ tracks/4/keys = {
 "values": [ Vector2( -11.6577, -30.6214 ), Vector2( -11.6577, -30.6214 ), Vector2( -11.6577, -30.6214 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Skeleton2D/hip/chest/arm_right:rotation_degrees")
+tracks/5/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -468,7 +471,7 @@ tracks/5/keys = {
 "values": [ 44.137, 9.17682, -72.4409 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Skeleton2D/hip/chest/head/jaw:position")
+tracks/6/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -480,7 +483,7 @@ tracks/6/keys = {
 "values": [ Vector2( -2.05179, -19.1168 ), Vector2( -2.05179, -19.1168 ), Vector2( -2.05179, -19.1168 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Skeleton2D/hip/chest/head/jaw:rotation_degrees")
+tracks/7/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -492,7 +495,7 @@ tracks/7/keys = {
 "values": [ 28.6465, 14.952, 14.952 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Skeleton2D/hip/chest/head:position")
+tracks/8/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -504,7 +507,7 @@ tracks/8/keys = {
 "values": [ Vector2( 3.36053, -36.9701 ), Vector2( 3.36053, -36.9701 ), Vector2( 3.36053, -36.9701 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Skeleton2D/hip/chest/head:rotation_degrees")
+tracks/9/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -516,7 +519,7 @@ tracks/9/keys = {
 "values": [ -3.14934, 10.5451, 10.5451 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Skeleton2D/hip/chest:position")
+tracks/10/path = NodePath("PlayerShape/Skeleton2D/hip/chest:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -528,7 +531,7 @@ tracks/10/keys = {
 "values": [ Vector2( 17.0497, -22.6151 ), Vector2( 17.0497, -22.6151 ), Vector2( 17.0497, -22.6151 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Skeleton2D/hip/chest:rotation_degrees")
+tracks/11/path = NodePath("PlayerShape/Skeleton2D/hip/chest:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -540,7 +543,7 @@ tracks/11/keys = {
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Skeleton2D/hip:position")
+tracks/12/path = NodePath("PlayerShape/Skeleton2D/hip:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -552,7 +555,7 @@ tracks/12/keys = {
 "values": [ Vector2( 431.219, 334.031 ), Vector2( 431.219, 334.031 ), Vector2( 431.219, 334.031 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Skeleton2D/hip:rotation_degrees")
+tracks/13/path = NodePath("PlayerShape/Skeleton2D/hip:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -564,7 +567,7 @@ tracks/13/keys = {
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
+tracks/14/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -576,7 +579,7 @@ tracks/14/keys = {
 "values": [ Vector2( 34.6964, 0.292328 ), Vector2( 34.6964, 0.292328 ), Vector2( 34.6964, 0.292328 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
+tracks/15/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -588,7 +591,7 @@ tracks/15/keys = {
 "values": [ 20.1821, -3.4, 40.4 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:position")
+tracks/16/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -600,7 +603,7 @@ tracks/16/keys = {
 "values": [ Vector2( -31.4231, 20.7717 ), Vector2( -31.4231, 20.7717 ), Vector2( -31.4231, 20.7717 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
+tracks/17/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -612,7 +615,7 @@ tracks/17/keys = {
 "values": [ 60.93, 42.3038, 100.462 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Skeleton2D/hip/chest/arm_left:position")
+tracks/18/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -624,7 +627,7 @@ tracks/18/keys = {
 "values": [ Vector2( 12.6029, -24.2471 ), Vector2( 12.6029, -24.2471 ), Vector2( 12.6029, -24.2471 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Skeleton2D/hip/chest/arm_left:rotation_degrees")
+tracks/19/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -636,7 +639,7 @@ tracks/19/keys = {
 "values": [ -8.1944, -46.6292, -155.393 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Skeleton2D/hip/leg_left:position")
+tracks/20/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -648,7 +651,7 @@ tracks/20/keys = {
 "values": [ Vector2( -0.933395, 8.90393 ), Vector2( -0.933395, 8.90393 ), Vector2( -0.933395, 8.90393 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Skeleton2D/hip/leg_left:rotation_degrees")
+tracks/21/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:rotation_degrees")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -660,7 +663,7 @@ tracks/21/keys = {
 "values": [ -64.9966, -71.521, -88.6759 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Skeleton2D/hip/leg_right/calf_right:position")
+tracks/22/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -672,7 +675,7 @@ tracks/22/keys = {
 "values": [ Vector2( 26.8759, 28.9565 ), Vector2( 26.8759, 28.9565 ), Vector2( 26.8759, 28.9565 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
+tracks/23/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -684,7 +687,7 @@ tracks/23/keys = {
 "values": [ 17.1956, 52.1066, 66.451 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Skeleton2D/hip/leg_right:position")
+tracks/24/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -696,7 +699,7 @@ tracks/24/keys = {
 "values": [ Vector2( -9.57304, 6.68124 ), Vector2( -9.57304, 6.68124 ), Vector2( -9.57304, 6.68124 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Skeleton2D/hip/leg_right:rotation_degrees")
+tracks/25/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:rotation_degrees")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -708,7 +711,7 @@ tracks/25/keys = {
 "values": [ 25.7058, 7.99214, -12.0748 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:position")
+tracks/26/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -720,7 +723,7 @@ tracks/26/keys = {
 "values": [ Vector2( 22.6632, 45.0033 ), Vector2( 22.6632, 45.0033 ), Vector2( 22.6632, 45.0033 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
+tracks/27/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -732,7 +735,7 @@ tracks/27/keys = {
 "values": [ -10.0038, -26.1808, -21.252 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Skeleton2D/hip/leg_left/calf_left:position")
+tracks/28/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -744,7 +747,7 @@ tracks/28/keys = {
 "values": [ Vector2( -10.2938, 31.5341 ), Vector2( -10.2938, 31.5341 ), Vector2( -10.2938, 31.5341 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
+tracks/29/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -756,7 +759,7 @@ tracks/29/keys = {
 "values": [ 49.6601, 72.6566, 66.6711 ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:position")
+tracks/30/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -768,7 +771,7 @@ tracks/30/keys = {
 "values": [ Vector2( -19.3708, 47.3185 ), Vector2( -19.3708, 47.3185 ), Vector2( -19.3708, 47.3185 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
+tracks/31/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -783,7 +786,7 @@ tracks/31/keys = {
 [sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Skeleton2D/hip/chest/head:position")
+tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -795,7 +798,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3.36053, -36.9701 ), Vector2( 3.36053, -36.9701 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Skeleton2D/hip/chest/head:rotation_degrees")
+tracks/1/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -807,7 +810,7 @@ tracks/1/keys = {
 "values": [ -3.14934, 3.89201 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Skeleton2D/hip/chest/arm_right:position")
+tracks/2/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -819,7 +822,7 @@ tracks/2/keys = {
 "values": [ Vector2( -11.6577, -30.6214 ), Vector2( -11.6577, -30.6214 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Skeleton2D/hip/chest/arm_right:rotation_degrees")
+tracks/3/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -831,7 +834,7 @@ tracks/3/keys = {
 "values": [ 26.3202, 62.4446 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:position")
+tracks/4/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -843,7 +846,7 @@ tracks/4/keys = {
 "values": [ Vector2( 3.73524, 33.2182 ), Vector2( 3.73524, 33.2182 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
+tracks/5/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -855,7 +858,7 @@ tracks/5/keys = {
 "values": [ 13.3822, 28.4822 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Skeleton2D/hip/chest:position")
+tracks/6/path = NodePath("PlayerShape/Skeleton2D/hip/chest:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -867,7 +870,7 @@ tracks/6/keys = {
 "values": [ Vector2( 17.0497, -22.6151 ), Vector2( 17.8906, -23.8765 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Skeleton2D/hip/chest:rotation_degrees")
+tracks/7/path = NodePath("PlayerShape/Skeleton2D/hip/chest:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -879,7 +882,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Skeleton2D/hip/chest/head/jaw:position")
+tracks/8/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -891,7 +894,7 @@ tracks/8/keys = {
 "values": [ Vector2( -2.05179, -19.1168 ), Vector2( -2.05179, -19.1168 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Skeleton2D/hip/chest/head/jaw:rotation_degrees")
+tracks/9/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -903,7 +906,7 @@ tracks/9/keys = {
 "values": [ 28.6465, 21.5434 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Skeleton2D/hip:position")
+tracks/10/path = NodePath("PlayerShape/Skeleton2D/hip:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -915,7 +918,7 @@ tracks/10/keys = {
 "values": [ Vector2( 440.039, 362.379 ), Vector2( 440.039, 362.379 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Skeleton2D/hip:rotation_degrees")
+tracks/11/path = NodePath("PlayerShape/Skeleton2D/hip:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -927,7 +930,7 @@ tracks/11/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:position")
+tracks/12/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -939,7 +942,7 @@ tracks/12/keys = {
 "values": [ Vector2( -31.4231, 20.7717 ), Vector2( -31.4231, 20.7717 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
+tracks/13/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -951,7 +954,7 @@ tracks/13/keys = {
 "values": [ 85.0313, 64.1744 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Skeleton2D/hip/chest/arm_left:position")
+tracks/14/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -963,7 +966,7 @@ tracks/14/keys = {
 "values": [ Vector2( 12.6029, -24.2471 ), Vector2( 12.6029, -24.2471 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Skeleton2D/hip/chest/arm_left:rotation_degrees")
+tracks/15/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -975,7 +978,7 @@ tracks/15/keys = {
 "values": [ 6.43163, -26.5456 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Skeleton2D/hip/leg_left:position")
+tracks/16/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -987,7 +990,7 @@ tracks/16/keys = {
 "values": [ Vector2( -0.933395, 8.90393 ), Vector2( -0.933395, 8.90393 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Skeleton2D/hip/leg_left:rotation_degrees")
+tracks/17/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -999,7 +1002,7 @@ tracks/17/keys = {
 "values": [ -67.7898, -33.213 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:position")
+tracks/18/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -1011,7 +1014,7 @@ tracks/18/keys = {
 "values": [ Vector2( -19.3708, 47.3185 ), Vector2( -19.3708, 47.3185 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
+tracks/19/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -1023,7 +1026,7 @@ tracks/19/keys = {
 "values": [ 53.6224, 0.215807 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Skeleton2D/hip/leg_left/calf_left:position")
+tracks/20/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -1035,7 +1038,7 @@ tracks/20/keys = {
 "values": [ Vector2( -10.2938, 31.5341 ), Vector2( -10.2938, 31.5341 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
+tracks/21/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -1047,7 +1050,7 @@ tracks/21/keys = {
 "values": [ 43.7268, 63.0555 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Skeleton2D/hip/leg_right/calf_right:position")
+tracks/22/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -1059,7 +1062,7 @@ tracks/22/keys = {
 "values": [ Vector2( 26.8759, 28.9565 ), Vector2( 26.8759, 28.9565 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
+tracks/23/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -1071,7 +1074,7 @@ tracks/23/keys = {
 "values": [ 66.3453, 32.92 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Skeleton2D/hip/leg_right:position")
+tracks/24/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -1083,7 +1086,7 @@ tracks/24/keys = {
 "values": [ Vector2( -9.57304, 6.68124 ), Vector2( -9.57304, 6.68124 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Skeleton2D/hip/leg_right:rotation_degrees")
+tracks/25/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:rotation_degrees")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -1095,7 +1098,7 @@ tracks/25/keys = {
 "values": [ 22.3055, -7.08065 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
+tracks/26/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -1107,7 +1110,7 @@ tracks/26/keys = {
 "values": [ Vector2( 34.6964, 0.292328 ), Vector2( 34.6964, 0.292328 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
+tracks/27/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -1119,7 +1122,7 @@ tracks/27/keys = {
 "values": [ -19.076, 35.6771 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:position")
+tracks/28/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -1131,7 +1134,7 @@ tracks/28/keys = {
 "values": [ Vector2( 22.6632, 45.0033 ), Vector2( 22.6632, 45.0033 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
+tracks/29/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -1143,7 +1146,7 @@ tracks/29/keys = {
 "values": [ -56.9421, 5.07064 ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
+tracks/30/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -1155,7 +1158,7 @@ tracks/30/keys = {
 "values": [ Vector2( 40.8919, 3.25929 ), Vector2( 40.8919, 3.25929 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
+tracks/31/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -1171,7 +1174,7 @@ tracks/31/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Skeleton2D/hip/chest/head:position")
+tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1183,7 +1186,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3.36053, -36.9701 ), Vector2( 3.36053, -36.9701 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Skeleton2D/hip/chest/head:rotation_degrees")
+tracks/1/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1195,7 +1198,7 @@ tracks/1/keys = {
 "values": [ 1.65766, 7.71619 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Skeleton2D/hip/chest/arm_right:position")
+tracks/2/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1207,7 +1210,7 @@ tracks/2/keys = {
 "values": [ Vector2( -11.6577, -30.6214 ), Vector2( -11.6577, -30.6214 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Skeleton2D/hip/chest/arm_right:rotation_degrees")
+tracks/3/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1219,7 +1222,7 @@ tracks/3/keys = {
 "values": [ -48.8186, -11.9528 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:position")
+tracks/4/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1231,7 +1234,7 @@ tracks/4/keys = {
 "values": [ Vector2( 3.73524, 33.2182 ), Vector2( 3.73524, 33.2182 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
+tracks/5/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1243,7 +1246,7 @@ tracks/5/keys = {
 "values": [ -11.9578, 18.1844 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Skeleton2D/hip/chest:position")
+tracks/6/path = NodePath("PlayerShape/Skeleton2D/hip/chest:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1255,7 +1258,7 @@ tracks/6/keys = {
 "values": [ Vector2( 17.8906, -24.2969 ), Vector2( 18.558, -24.9643 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Skeleton2D/hip/chest:rotation_degrees")
+tracks/7/path = NodePath("PlayerShape/Skeleton2D/hip/chest:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1267,7 +1270,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Skeleton2D/hip/chest/head/jaw:position")
+tracks/8/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1279,7 +1282,7 @@ tracks/8/keys = {
 "values": [ Vector2( -2.05179, -19.1168 ), Vector2( -2.05179, -19.1168 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Skeleton2D/hip/chest/head/jaw:rotation_degrees")
+tracks/9/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head/jaw:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1291,7 +1294,7 @@ tracks/9/keys = {
 "values": [ 23.7386, 17.7088 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Skeleton2D/hip:position")
+tracks/10/path = NodePath("PlayerShape/Skeleton2D/hip:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1303,7 +1306,7 @@ tracks/10/keys = {
 "values": [ Vector2( 437.172, 322.125 ), Vector2( 437.172, 326.13 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Skeleton2D/hip:rotation_degrees")
+tracks/11/path = NodePath("PlayerShape/Skeleton2D/hip:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1315,7 +1318,7 @@ tracks/11/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:position")
+tracks/12/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1327,7 +1330,7 @@ tracks/12/keys = {
 "values": [ Vector2( -31.4231, 20.7717 ), Vector2( -31.4231, 20.7717 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
+tracks/13/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1339,7 +1342,7 @@ tracks/13/keys = {
 "values": [ 18.5351, 48.8769 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Skeleton2D/hip/chest/arm_left:position")
+tracks/14/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1351,7 +1354,7 @@ tracks/14/keys = {
 "values": [ Vector2( 12.6029, -24.2471 ), Vector2( 12.6029, -24.2471 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Skeleton2D/hip/chest/arm_left:rotation_degrees")
+tracks/15/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -1363,7 +1366,7 @@ tracks/15/keys = {
 "values": [ -57.2045, -128.08 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Skeleton2D/hip/leg_left:position")
+tracks/16/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -1375,7 +1378,7 @@ tracks/16/keys = {
 "values": [ Vector2( -2.52081, -3.39841 ), Vector2( -2.52081, -3.39841 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Skeleton2D/hip/leg_left:rotation_degrees")
+tracks/17/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -1387,7 +1390,7 @@ tracks/17/keys = {
 "values": [ -125.567, -74.1913 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:position")
+tracks/18/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -1399,7 +1402,7 @@ tracks/18/keys = {
 "values": [ Vector2( -19.3708, 47.3185 ), Vector2( -19.3708, 47.3185 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
+tracks/19/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left/foot_left:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -1411,7 +1414,7 @@ tracks/19/keys = {
 "values": [ 68.7859, 61.3527 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Skeleton2D/hip/leg_left/calf_left:position")
+tracks/20/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -1423,7 +1426,7 @@ tracks/20/keys = {
 "values": [ Vector2( -10.2938, 31.5341 ), Vector2( -10.2938, 31.5341 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
+tracks/21/path = NodePath("PlayerShape/Skeleton2D/hip/leg_left/calf_left:rotation_degrees")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -1435,7 +1438,7 @@ tracks/21/keys = {
 "values": [ 85.6066, 42.5119 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Skeleton2D/hip/leg_right/calf_right:position")
+tracks/22/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -1447,7 +1450,7 @@ tracks/22/keys = {
 "values": [ Vector2( 26.8759, 28.9565 ), Vector2( 26.8759, 28.9565 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
+tracks/23/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -1459,7 +1462,7 @@ tracks/23/keys = {
 "values": [ 46.9132, 88.5178 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Skeleton2D/hip/leg_right:position")
+tracks/24/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -1471,7 +1474,7 @@ tracks/24/keys = {
 "values": [ Vector2( -5.60454, 1.52219 ), Vector2( -5.60454, 1.52219 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Skeleton2D/hip/leg_right:rotation_degrees")
+tracks/25/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right:rotation_degrees")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -1483,7 +1486,7 @@ tracks/25/keys = {
 "values": [ -25.4876, -68.0642 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
+tracks/26/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -1495,7 +1498,7 @@ tracks/26/keys = {
 "values": [ Vector2( 34.6964, 0.292328 ), Vector2( 34.6964, 0.292328 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
+tracks/27/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left/hand_left:rotation_degrees")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -1507,7 +1510,7 @@ tracks/27/keys = {
 "values": [ 48.9037, 89.9719 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:position")
+tracks/28/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -1519,7 +1522,7 @@ tracks/28/keys = {
 "values": [ Vector2( 22.6632, 45.0033 ), Vector2( 22.6632, 45.0033 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
+tracks/29/path = NodePath("PlayerShape/Skeleton2D/hip/leg_right/calf_right/foot_right:rotation_degrees")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -1531,7 +1534,7 @@ tracks/29/keys = {
 "values": [ 10.5177, 11.6332 ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
+tracks/30/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -1543,7 +1546,7 @@ tracks/30/keys = {
 "values": [ Vector2( 40.8919, 3.25929 ), Vector2( 40.8919, 3.25929 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
+tracks/31/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:rotation_degrees")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -1555,17 +1558,17 @@ tracks/31/keys = {
 "values": [ -330.405, -397.59 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 66.4152
-height = 72.2174
-
 [node name="KinematicPlayer" type="KinematicBody2D"]
+collision_layer = 2147483649
 script = ExtResource( 3 )
+inertia = 3.0
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="PlayerShape" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="PlayerShape"]
 position = Vector2( -429.818, -336.38 )
 
-[node name="arm_left" type="Polygon2D" parent="Node2D"]
+[node name="arm_left" type="Polygon2D" parent="PlayerShape/Node2D"]
 position = Vector2( -130.265, 21.1007 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
@@ -1575,7 +1578,7 @@ polygons = [ PoolIntArray( 0, 16, 10, 11, 12, 13, 14, 15 ), PoolIntArray( 0, 1, 
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/forearm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/forearm_right/hand_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left"), PoolRealArray( 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0 ), NodePath("hip/chest/arm_left/forearm_left"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1 ), NodePath("hip/chest/arm_left/forearm_left/hand_left"), PoolRealArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 ), NodePath("hip/leg_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 internal_vertex_count = 2
 
-[node name="head" type="Polygon2D" parent="Node2D"]
+[node name="head" type="Polygon2D" parent="PlayerShape/Node2D"]
 position = Vector2( -37.4767, 12.7279 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
@@ -1584,7 +1587,7 @@ uv = PoolVector2Array( 512.707, 283.425, 537.017, 296.685, 544.751, 287.845, 560
 polygons = [ PoolIntArray( 7, 6, 5, 4, 3, 2, 1, 0 ) ]
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("hip/chest/arm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/hand_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/hand_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
-[node name="leg_left" type="Polygon2D" parent="Node2D"]
+[node name="leg_left" type="Polygon2D" parent="PlayerShape/Node2D"]
 position = Vector2( -108.187, -38.1838 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
@@ -1594,7 +1597,7 @@ polygons = [ PoolIntArray( 12, 13, 3, 2, 1, 0 ), PoolIntArray( 12, 11, 10, 9, 8,
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/hand_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/hand_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left"), PoolRealArray( 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 internal_vertex_count = 1
 
-[node name="leg_right" type="Polygon2D" parent="Node2D"]
+[node name="leg_right" type="Polygon2D" parent="PlayerShape/Node2D"]
 position = Vector2( -58.7671, -28.2842 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
@@ -1604,7 +1607,7 @@ polygons = [ PoolIntArray( 0, 13, 4, 3, 2, 1 ), PoolIntArray( 0, 12, 11, 10, 9, 
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/hand_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/hand_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 internal_vertex_count = 1
 
-[node name="chest" type="Polygon2D" parent="Node2D"]
+[node name="chest" type="Polygon2D" parent="PlayerShape/Node2D"]
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 424.309, 349.724, 445.856, 359.116, 492.265, 355.249, 509.392, 307.182, 507.182, 298.343, 494.475, 300, 462.431, 283.425, 494.475, 205.525, 484.53, 201.657 )
@@ -1612,7 +1615,7 @@ uv = PoolVector2Array( 424.309, 349.724, 445.856, 359.116, 492.265, 355.249, 509
 polygons = [ PoolIntArray( 8, 7, 6, 5, 4, 3, 2, 1, 0 ) ]
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("hip/chest/head"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/hand_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/hand_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
-[node name="hip" type="Polygon2D" parent="Node2D"]
+[node name="hip" type="Polygon2D" parent="PlayerShape/Node2D"]
 position = Vector2( -1.41425, -13.435 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
@@ -1621,7 +1624,7 @@ uv = PoolVector2Array( 445.304, 376.796, 452.486, 364.088, 467.403, 366.298, 492
 polygons = [ PoolIntArray( 1, 2, 3, 4, 5, 0 ) ]
 bones = [ NodePath("hip"), PoolRealArray( 1, 1, 1, 1, 1, 1 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right/hand_right"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/hand_left"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
 
-[node name="arm_right" type="Polygon2D" parent="Node2D"]
+[node name="arm_right" type="Polygon2D" parent="PlayerShape/Node2D"]
 position = Vector2( -98.4337, 18.1376 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D")
@@ -1631,18 +1634,18 @@ polygons = [ PoolIntArray( 1, 11, 8, 9, 10, 0 ), PoolIntArray( 8, 13, 12, 3, 2, 
 bones = [ NodePath("hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/head/jaw"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_right"), PoolRealArray( 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0 ), NodePath("hip/chest/arm_right/forearm_right"), PoolRealArray( 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1 ), NodePath("hip/chest/arm_right/forearm_right/hand_right"), PoolRealArray( 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 ), NodePath("hip/chest/arm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/forearm_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/chest/arm_left/forearm_left/hand_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_left/calf_left/foot_left"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("hip/leg_right/calf_right/foot_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 internal_vertex_count = 3
 
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
+[node name="Skeleton2D" type="Skeleton2D" parent="PlayerShape"]
 position = Vector2( -429.818, -336.38 )
 
-[node name="hip" type="Bone2D" parent="Skeleton2D"]
+[node name="hip" type="Bone2D" parent="PlayerShape/Skeleton2D"]
 position = Vector2( 431.219, 334.031 )
 rest = Transform2D( 1, 0, 0, 1, 469.47, 357.754 )
 
-[node name="chest" type="Bone2D" parent="Skeleton2D/hip"]
+[node name="chest" type="Bone2D" parent="PlayerShape/Skeleton2D/hip"]
 position = Vector2( 17.0497, -22.6151 )
 rest = Transform2D( 1, 0, 0, 1, 17.0497, -22.6151 )
 
-[node name="head" type="Bone2D" parent="Skeleton2D/hip/chest"]
+[node name="head" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest"]
 position = Vector2( 3.36053, -36.9701 )
 rotation = -0.0549663
 rest = Transform2D( 0.99849, -0.0549387, 0.0549387, 0.99849, 3.36053, -36.9701 )
@@ -1651,7 +1654,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="jaw" type="Bone2D" parent="Skeleton2D/hip/chest/head"]
+[node name="jaw" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest/head"]
 position = Vector2( -2.05179, -19.1168 )
 rotation = 0.499976
 rest = Transform2D( 0.877595, 0.479404, -0.479404, 0.877595, -2.05179, -19.1168 )
@@ -1659,7 +1662,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="arm_right" type="Bone2D" parent="Skeleton2D/hip/chest"]
+[node name="arm_right" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest"]
 position = Vector2( -11.6577, -30.6214 )
 rotation = 0.770336
 rest = Transform2D( 0.882846, 0.469663, -0.469663, 0.882846, -11.6577, -30.6214 )
@@ -1668,7 +1671,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="forearm_right" type="Bone2D" parent="Skeleton2D/hip/chest/arm_right"]
+[node name="forearm_right" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest/arm_right"]
 position = Vector2( 3.73524, 33.2182 )
 rotation = 0.307633
 rest = Transform2D( 0.798509, 0.601983, -0.601983, 0.798509, 3.73524, 33.2182 )
@@ -1677,7 +1680,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="hand_right" type="Bone2D" parent="Skeleton2D/hip/chest/arm_right/forearm_right"]
+[node name="hand_right" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right"]
 position = Vector2( 40.8919, 3.25929 )
 rotation = 0.0938931
 rest = Transform2D( 1, 0, 0, 1, 40.8919, 3.25929 )
@@ -1685,7 +1688,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="arm_left" type="Bone2D" parent="Skeleton2D/hip/chest"]
+[node name="arm_left" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest"]
 position = Vector2( 12.6029, -24.2471 )
 rotation = -0.143019
 rest = Transform2D( 0.825535, -0.564351, 0.564351, 0.825535, 12.6029, -24.2471 )
@@ -1694,7 +1697,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="forearm_left" type="Bone2D" parent="Skeleton2D/hip/chest/arm_left"]
+[node name="forearm_left" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest/arm_left"]
 position = Vector2( -31.4231, 20.7717 )
 rotation = 1.06343
 rest = Transform2D( -0.258819, 0.965926, -0.965926, -0.258819, -31.4231, 20.7717 )
@@ -1703,7 +1706,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="hand_left" type="Bone2D" parent="Skeleton2D/hip/chest/arm_left/forearm_left"]
+[node name="hand_left" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/chest/arm_left/forearm_left"]
 position = Vector2( 34.6964, 0.292328 )
 rotation = 0.352244
 rest = Transform2D( 1, 0, 0, 1, 34.6964, 0.292328 )
@@ -1711,7 +1714,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="leg_left" type="Bone2D" parent="Skeleton2D/hip"]
+[node name="leg_left" type="Bone2D" parent="PlayerShape/Skeleton2D/hip"]
 position = Vector2( -0.933395, 8.90393 )
 rotation = -1.1344
 rest = Transform2D( 0.998369, -0.0570996, 0.0570996, 0.998369, -0.933395, 8.90393 )
@@ -1720,7 +1723,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="calf_left" type="Bone2D" parent="Skeleton2D/hip/leg_left"]
+[node name="calf_left" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/leg_left"]
 position = Vector2( -10.2938, 31.5341 )
 rotation = 0.866732
 rest = Transform2D( 0.996594, -0.0824662, 0.0824662, 0.996594, -10.2938, 31.5341 )
@@ -1728,7 +1731,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="foot_left" type="Bone2D" parent="Skeleton2D/hip/leg_left/calf_left"]
+[node name="foot_left" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/leg_left/calf_left"]
 position = Vector2( -19.3708, 47.3185 )
 rotation = 0.773303
 rest = Transform2D( 0.786764, 0.617253, -0.617253, 0.786764, -19.3708, 47.3185 )
@@ -1736,7 +1739,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="leg_right" type="Bone2D" parent="Skeleton2D/hip"]
+[node name="leg_right" type="Bone2D" parent="PlayerShape/Skeleton2D/hip"]
 position = Vector2( -9.57304, 6.68124 )
 rotation = 0.448651
 rest = Transform2D( 0.571519, 0.820589, -0.820589, 0.571519, -9.57304, 6.68124 )
@@ -1745,7 +1748,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="calf_right" type="Bone2D" parent="Skeleton2D/hip/leg_right"]
+[node name="calf_right" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/leg_right"]
 position = Vector2( 26.8759, 28.9565 )
 rotation = 0.30012
 rest = Transform2D( 0.976311, -0.21637, 0.21637, 0.976311, 26.8759, 28.9565 )
@@ -1753,7 +1756,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="foot_right" type="Bone2D" parent="Skeleton2D/hip/leg_right/calf_right"]
+[node name="foot_right" type="Bone2D" parent="PlayerShape/Skeleton2D/hip/leg_right/calf_right"]
 position = Vector2( 22.6632, 45.0033 )
 rotation = -0.174599
 rest = Transform2D( 0.976054, -0.217529, 0.217529, 0.976054, 22.6632, 45.0033 )
@@ -1761,14 +1764,17 @@ __meta__ = {
 "_edit_bone_": true
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 5.96262, 0.203112 )
+shape = SubResource( 5 )
+
+[node name="Bubble" parent="CollisionShape2D" instance=ExtResource( 2 )]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 1 )
 anims/JumpToWall = SubResource( 2 )
 anims/Walk = SubResource( 3 )
 anims/WalkOnWall = SubResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 10.3766, -1.38429 )
-shape = SubResource( 5 )
-
-[node name="Bubble" parent="CollisionShape2D" instance=ExtResource( 2 )]
+[node name="Cliffhanger" type="Timer" parent="."]
+wait_time = 0.2

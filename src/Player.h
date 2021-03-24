@@ -27,6 +27,8 @@ class Player : public KinematicBody2D {
 
 	BubbleControl *bubbleControl;
 	AnimationPlayer *animationPlayer;
+	Node2D *playerShape;
+
 	bool cliffhanger;
 	real_t _cliffhanger_time;
 	real_t impulse_time;
@@ -40,7 +42,6 @@ class Player : public KinematicBody2D {
 	real_t _inertia;
 	Vector2 _jump_force;
 	real_t _climb_speed;
-	bool isScaleXInversed = false;
 	bool isOrientedRight = true;
 	const Vector2 floor = Vector2(0, -1);
 
