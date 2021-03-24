@@ -119,7 +119,6 @@ void Player::_ready() {
 
 void Player::_activate_cliffhanger() {
 	cliffhanger = true;
-	Godot::print("CLIFFHANGER YIPIKAY MOTHERFUCKER !");
 }
 
 void Player::_register_methods() {

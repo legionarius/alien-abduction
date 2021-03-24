@@ -49,7 +49,6 @@ void Camera::_fade_in() {
 }
 
 void Camera::_player_out(Node *node) {
-	Godot::print("Player out !");
 	Player *player = Object::cast_to<Player>(node);
 	if (player != nullptr) {
 		_fade_in();
