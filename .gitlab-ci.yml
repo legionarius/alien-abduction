@@ -11,31 +11,31 @@ stages:
   - deploy
 
 variables:
-  EXPORT_NAME: weekly-gamejam-190
+  EXPORT_NAME: landlord
 
 linux:
   stage: export
   script:
-    - scons platform=linux target=release
-    - sed -i -e 's/X11.64/Server/g' lib/gdlibrary.tres
+    - scons platform=linux target=release use_llvm=yes
     - mkdir -v -p build/linux
     - godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
   artifacts:
     name: $EXPORT_NAME-$CI_JOB_NAME
     paths:
       - build/linux
+    expire_in: 2 days
 
 windows:
   stage: export
   script:
     - scons platform=windows target=release
-    - sed -i -e 's/Windows.64/Server/g' lib/gdlibrary.tres
     - mkdir -v -p build/windows
     - godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
   artifacts:
     name: $EXPORT_NAME-$CI_JOB_NAME
     paths:
       - build/windows
+    expire_in: 2 days
 
 mac:
   stage: export
@@ -48,6 +48,19 @@ mac:
     name: $EXPORT_NAME-$CI_JOB_NAME
     paths:
       - build/mac
+    expire_in: 2 days
+
+html5:
+  stage: export
+  script:
+    - scons platform=javascript target=release
+    - mkdir -v -p build/html5
+    - godot -v --export "HTML5" build/html5/index.html
+  artifacts:
+    name: $EXPORT_NAME-web
+    paths:
+      - build/html5
+    expire_in: 2 days
 
 # Itch.io Deploy
 itchio:linux:

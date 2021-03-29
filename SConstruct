@@ -2,6 +2,7 @@
 import os
 import sys
 import subprocess
+from SCons import __version__ as scons_raw_version
 
 # Try to detect the host platform automatically.
 # This is used if no `platform` argument is passed
@@ -22,6 +23,14 @@ opts = Variables([], ARGUMENTS)
 # Gets the standard flags CC, CCX, etc.
 env = DefaultEnvironment()
 
+# Gets SCons version
+scons_ver = env._get_major_minor_revision(scons_raw_version)
+
+
+if scons_ver >= (4, 0, 0):
+    env.Tool("compilation_db")
+    env.Alias("compiledb", env.CompilationDatabase())
+
 is64 = sys.maxsize > 2**32
 if (
         env['TARGET_ARCH'] == 'amd64' or
@@ -33,7 +42,7 @@ if (
 
 # Define our options
 opts.Add(EnumVariable('target', "Compilation target", 'debug', ['d', 'debug', 'r', 'release']))
-opts.Add(EnumVariable('platform', "Compilation platform", '', ['', 'windows', 'x11', 'linux', 'osx']))
+opts.Add(EnumVariable('platform', "Compilation platform", '', ['', 'windows', 'x11', 'linux', 'osx', 'javascript']))
 opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'lib/'))
@@ -46,7 +55,7 @@ if 'GODOT_CPP' in os.environ.keys():
 else:
     cpp_bindings_path = "godot-cpp/"
 
-godot_headers_path = cpp_bindings_path + "godot-headers/"
+godot_headers_path = os.path.join(cpp_bindings_path, "godot-headers/")
 cpp_library = "libgodot-cpp"
 
 # only support 64 at this time..
@@ -80,11 +89,10 @@ if env['platform'] == "osx":
 
 elif env['platform'] in ('x11', 'linux'):
     env['target_path'] += 'x11/'
-    cpp_library += '.linux'
     if env['target'] in ('debug', 'd'):
-        env.Append(CCFLAGS = ['-fPIC', '-g3','-Og', '-std=c++17'])
+        env.Append(CCFLAGS = ['-fPIC', '-g3','-Og', '-std=c++2a'])
     else:
-        env.Append(CCFLAGS = ['-fPIC', '-g','-O3', '-std=c++17'])
+        env.Append(CCFLAGS = ['-fPIC', '-g','-O3', '-std=c++2a'])
 
 elif env['platform'] == "windows":
     env['target_path'] += 'win64/'
@@ -119,13 +127,12 @@ elif env['platform'] == "windows":
         env = Environment(ENV = os.environ, tools=["mingw"])
         opts.Update(env)
         #env = env.Clone(tools=['mingw'])
-
         env["SPAWN"] = mySpawn
 
     # Native or cross-compilation using MinGW
     if host_platform == 'linux' or host_platform == 'osx' or env['use_mingw']:
         # These options are for a release build even using target=debug
-        env.Append(CCFLAGS=['-O3', '-std=c++14', '-Wwrite-strings'])
+        env.Append(CCFLAGS=['-O3', '-std=c++17', '-Wwrite-strings'])
         env.Append(LINKFLAGS=[
             '--static',
             '-Wl,--no-undefined',
@@ -133,17 +140,54 @@ elif env['platform'] == "windows":
             '-static-libstdc++',
         ])
 
-if env['target'] in ('debug', 'd'):
-    cpp_library += '.debug'
-else:
-    cpp_library += '.release'
+elif env["platform"] == "javascript":
+    env['target_path'] += 'wasm32/'
+    env["ENV"] = os.environ
+    env["CC"] = "emcc"
+    env["CXX"] = "em++"
+    env["AR"] = "emar"
+    env["RANLIB"] = "emranlib"
+    env.Append(CPPFLAGS=["-s", "SIDE_MODULE=1", "-std=c++2a"])
+    env.Append(LINKFLAGS=["-s", "SIDE_MODULE=1"])
+    env["SHOBJSUFFIX"] = ".bc"
+    env["SHLIBSUFFIX"] = ".wasm"
+    # Use TempFileMunge since some AR invocations are too long for cmd.exe.
+    # Use POSIX-style paths, required with TempFileMunge.
+    env["ARCOM_POSIX"] = env["ARCOM"].replace("$TARGET", "$TARGET.posix").replace("$SOURCES", "$SOURCES.posix")
+    env["ARCOM"] = "${TEMPFILE(ARCOM_POSIX)}"
+    # All intermediate files are just LLVM bitcode.
+    env["OBJPREFIX"] = ""
+    env["OBJSUFFIX"] = ".bc"
+    env["PROGPREFIX"] = ""
+    # Program() output consists of multiple files, so specify suffixes manually at builder.
+    env["PROGSUFFIX"] = ""
+    env["LIBPREFIX"] = "lib"
+    env["LIBSUFFIX"] = ".bc"
+    env["LIBPREFIXES"] = ["$LIBPREFIX"]
+    env["LIBSUFFIXES"] = ["$LIBSUFFIX"]
+    env.Replace(SHLINKFLAGS='$LINKFLAGS')
 
-cpp_library += '.' + str(bits)
+    if env['target'] == "debug":
+        env.Append(CCFLAGS = ['-g'])
+
+
+if env["platform"] == "javascript":
+    godot_cpp_suffix = ".wasm.bc"
+else:
+    godot_cpp_suffix = ".64.a"
+
+
+cpp_library_filename = "libgodot-cpp.{platform}.{target}{suffix}".format(
+    platform=env['platform'],
+    target=env['target'],
+    suffix=godot_cpp_suffix
+)
 
 # make sure our binding library is properly includes
-env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/'])
-env.Append(LIBPATH=[cpp_bindings_path + 'bin/'])
-env.Append(LIBS=[cpp_library])
+env.Append(CPPPATH=['.', godot_headers_path, os.path.join(cpp_bindings_path, 'include/'), os.path.join(cpp_bindings_path, 'include/core/'), os.path.join(cpp_bindings_path, 'include/gen/')])
+env.Append(LIBPATH=[os.path.join(cpp_bindings_path, 'bin/')])
+env.Append(LIBS=[env.File(os.path.join(cpp_bindings_path, "bin", cpp_library_filename))])
+
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=['src/'])
