@@ -17,6 +17,7 @@
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
 #include <iomanip>
+#include <sstream>
 
 namespace godot {
 class GameState : public Node {
