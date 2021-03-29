@@ -12,7 +12,6 @@ stages:
 
 variables:
   EXPORT_NAME: weekly-gamejam-190
-  GODOT_CPP: /home/root/godot-cpp/
 
 linux:
   stage: export
