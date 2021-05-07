@@ -4,11 +4,10 @@
 [ext_resource path="res://entity/BubbleControl/BubbleControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entity/Player/Player.gdns" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 73.2665, 109.092 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "Idle"
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:position")
@@ -395,8 +394,7 @@ tracks/31/keys = {
 "values": [ 5.37968, 18.1113 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "JumpToWall"
+[sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/arm_right/forearm_right/hand_right:position")
@@ -783,7 +781,7 @@ tracks/31/keys = {
 "values": [ 44.307, 28.3276, 50.8692 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerShape/Skeleton2D/hip/chest/head:position")
@@ -1170,7 +1168,7 @@ tracks/31/keys = {
 "values": [ 28.0511, -22.5363 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -1766,15 +1764,15 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5.96262, 0.203112 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Bubble" parent="CollisionShape2D" instance=ExtResource( 2 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 1 )
-anims/JumpToWall = SubResource( 2 )
-anims/Walk = SubResource( 3 )
-anims/WalkOnWall = SubResource( 4 )
+anims/Idle = SubResource( 2 )
+anims/JumpToWall = SubResource( 3 )
+anims/Walk = SubResource( 4 )
+anims/WalkOnWall = SubResource( 5 )
 
 [node name="Cliffhanger" type="Timer" parent="."]
 wait_time = 0.2
