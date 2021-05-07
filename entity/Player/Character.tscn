@@ -4,8 +4,9 @@
 [ext_resource path="res://entity/BubbleControl/BubbleControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entity/Player/Player.gdns" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 73.2665, 109.092 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 63.1349
+height = 117.633
 
 [sub_resource type="Animation" id=2]
 loop = true
@@ -1763,7 +1764,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5.96262, 0.203112 )
+position = Vector2( 26.0924, -4.03473 )
 shape = SubResource( 1 )
 
 [node name="Bubble" parent="CollisionShape2D" instance=ExtResource( 2 )]
