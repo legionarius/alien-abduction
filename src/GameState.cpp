@@ -116,6 +116,15 @@ void GameState::_remove_player_from_tree() {
 	}
 }
 
+void GameState::_update_sound_volume(float_t volume) {
+	sound_volume = volume;
+	emit_signal("update_volume", volume);
+}
+
+float_t GameState::_get_sound_volume() {
+	return sound_volume;
+}
+
 void GameState::_register_methods() {
 	register_method("_init", &GameState::_init);
 	register_method("_ready", &GameState::_ready);
@@ -129,4 +138,5 @@ void GameState::_register_methods() {
 	register_signal<GameState>("_increment_level");
 	register_signal<GameState>("camera_start_focus");
 	register_signal<GameState>("camera_end_focus");
+	register_signal<GameState>("update_volume", "volume", GODOT_VARIANT_TYPE_REAL);
 }

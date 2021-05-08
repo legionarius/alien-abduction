@@ -27,7 +27,9 @@ class GameState : public Node {
 	int level_count;
 	int current_level_id;
 	bool is_started;
+	float_t sound_volume = 1.f;
 
+public:
 	std::string _get_level_path(int level_id);
 	void _load_level();
 	void _add_level(int level_id);
@@ -35,8 +37,8 @@ class GameState : public Node {
 	void _disconnect_level(Node *p_level);
 	void _remove_level();
 	void _remove_player_from_tree();
-
-public:
+	void _update_sound_volume(float_t volume);
+	float_t _get_sound_volume();
 	void _start_game();
 	void _spawn_player();
 	void _player_ready();

@@ -712,4 +712,4 @@ add_executable(
         src/GameTimer.cpp
         src/UILevel.cpp
         src/TimeLabel.cpp
-)
+        src/Settings.cpp src/Settings.h)

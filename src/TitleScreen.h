@@ -7,11 +7,9 @@
 
 #include "GameState.h"
 
-#include <AnimationPlayer.hpp>
 #include <AudioStreamPlayer.hpp>
 #include <Button.hpp>
 #include <Control.hpp>
-#include <KinematicBody2D.hpp>
 #include <Godot.hpp>
 #include <InputEvent.hpp>
 #include <InputEventKey.hpp>
@@ -19,13 +17,14 @@
 #include <Ref.hpp>
 #include <ResourceLoader.hpp>
 #include <SceneTree.hpp>
-#include <Slider.hpp>
 #include <Viewport.hpp>
 
 namespace godot {
 
 class TitleScreen : public Control {
 	GODOT_CLASS(TitleScreen, Control);
+
+	AudioStreamPlayer *sound;
 
 public:
 	static void _register_methods();
@@ -34,7 +33,6 @@ public:
 	void _exit();
 	void _start();
 	void _input(const Ref<InputEvent> event);
-	void _navigate_to_settings();
 	void _update_sound_volume(float_t value);
 };
 

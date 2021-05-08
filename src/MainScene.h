@@ -6,6 +6,8 @@
 #define WEEKLY_GAMEJAM_190_MAINSCENE_H
 
 #include "GameState.h"
+
+#include <AudioStreamPlayer.hpp>
 #include <Godot.hpp>
 #include <Node2D.hpp>
 #include <SceneTree.hpp>
