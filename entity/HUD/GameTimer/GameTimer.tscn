@@ -30,4 +30,5 @@ __meta__ = {
 
 [node name="GameClock" type="Timer" parent="."]
 wait_time = 0.1
+
 [connection signal="timeout" from="GameClock" to="." method="_on_Timer_timeout"]
