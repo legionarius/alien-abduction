@@ -709,7 +709,6 @@ add_executable(
         src/Level.cpp
         src/TitleScreen.cpp
         src/MainScene.cpp
-        src/FadeScreen.cpp
         src/GameTimer.cpp
         src/UILevel.cpp
         src/TimeLabel.cpp

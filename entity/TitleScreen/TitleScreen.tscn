@@ -1,10 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entity/TitleScreen/TitleScreen.gdns" type="Script" id=1]
-[ext_resource path="res://assets/MainScene/run_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/font/spacerangersemital.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/TitleScreen/bg_titlescreen.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/TitleScreen/button_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/sound/bensound-scifi.ogg" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=5]
+size = 52
+outline_size = 2
+outline_color = Color( 0.109804, 0.129412, 0.14902, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0705882, 0.176471, 0.101961, 1 )
@@ -80,7 +87,7 @@ margin_left = -307.0
 margin_top = 50.0
 margin_right = 307.0
 margin_bottom = 118.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.980392, 0.964706, 0.964706, 1 )
 text = "alien abduction"
 align = 1
