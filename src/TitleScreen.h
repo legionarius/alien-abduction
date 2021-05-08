@@ -6,7 +6,9 @@
 #define GAMEJAM_TRAINING_TITLESCREEN_H
 
 #include "GameState.h"
+
 #include <AnimationPlayer.hpp>
+#include <AudioStreamPlayer.hpp>
 #include <Button.hpp>
 #include <Control.hpp>
 #include <KinematicBody2D.hpp>
@@ -17,6 +19,7 @@
 #include <Ref.hpp>
 #include <ResourceLoader.hpp>
 #include <SceneTree.hpp>
+#include <Slider.hpp>
 #include <Viewport.hpp>
 
 namespace godot {
@@ -32,6 +35,7 @@ public:
 	void _start();
 	void _input(const Ref<InputEvent> event);
 	void _navigate_to_settings();
+	void _update_sound_volume(float_t value);
 };
 
 } // namespace godot

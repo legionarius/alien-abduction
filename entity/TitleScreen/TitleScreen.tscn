@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://entity/TitleScreen/TitleScreen.gdns" type="Script" id=1]
 [ext_resource path="res://assets/font/spacerangersemital.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/TitleScreen/bg_titlescreen.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/TitleScreen/button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/TitleScreen/sound.png" type="Texture" id=5]
 [ext_resource path="res://assets/sound/bensound-scifi.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=5]
@@ -96,7 +97,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = 1.0
 autoplay = true
@@ -139,3 +140,17 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.760784, 0.576471, 0.396078, 1 )
 custom_colors/font_color_pressed = Color( 0.760784, 0.576471, 0.396078, 1 )
 text = "exit"
+
+[node name="SoundSlider" type="HSlider" parent="."]
+margin_left = 39.0105
+margin_top = 10.7212
+margin_right = 138.01
+margin_bottom = 41.7212
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundSprite" type="Sprite" parent="."]
+position = Vector2( 19.3143, 26.0703 )
+scale = Vector2( 0.23351, 0.23351 )
+texture = ExtResource( 5 )
