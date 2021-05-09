@@ -57,7 +57,6 @@ void BubbleControl::_disappear() {
 void BubbleControl::_ready() {
 	hide();
 	oscillation = Vector2(max_radius - 2, max_radius - 2);
-	Godot::print("Maximum radius = " + Utils::gdt_string(max_radius));
 	steps = max_radius / bubble_time;
 	_init_bubble_timer();
 }

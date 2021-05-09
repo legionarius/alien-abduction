@@ -1,50 +1,66 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://entity/TitleScreen/TitleScreen.gdns" type="Script" id=1]
-[ext_resource path="res://assets/MainScene/run_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/TitleScreen/bg_title.jpg" type="Texture" id=3]
-[ext_resource path="res://assets/gfx/player/player_mouvement_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/gfx/player/player_mouvement_4.png" type="Texture" id=5]
-[ext_resource path="res://assets/gfx/player/player_mouvement_3.png" type="Texture" id=6]
-[ext_resource path="res://assets/gfx/player/player_mouvement_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/font/spacerangersemital.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/TitleScreen/bg_titlescreen.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/TitleScreen/button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://entity/HUD/Settings/Settings.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sound/bensound-scifi.ogg" type="AudioStream" id=8]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 9.0
-} ]
+[sub_resource type="DynamicFont" id=5]
+size = 52
+outline_size = 2
+outline_color = Color( 0.109804, 0.129412, 0.14902, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "walk_across_galaxy"
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -29.644, 555 ), Vector2( 350, 555 ), Vector2( 700, 555 ), Vector2( 1050, 555 ), Vector2( 700, 555 ), Vector2( 350, 555 ), Vector2( -29.644, 555 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0705882, 0.176471, 0.101961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.654902, 0.466667, 0.364706, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0705882, 0.176471, 0.101961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.654902, 0.466667, 0.364706, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -55,7 +71,8 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
+margin_left = -0.268128
+margin_right = 1023.73
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 expand = true
@@ -65,61 +82,63 @@ __meta__ = {
 }
 
 [node name="GameTitle" type="Label" parent="."]
-margin_left = 221.93
-margin_top = 26.6207
-margin_right = 835.93
-margin_bottom = 144.621
-custom_fonts/font = ExtResource( 2 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -307.0
+margin_top = 50.0
+margin_right = 307.0
+margin_bottom = 118.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.980392, 0.964706, 0.964706, 1 )
-text = "Alien Abduction"
+text = "alien abduction"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainMenu" type="Panel" parent="."]
-margin_left = 351.0
-margin_top = 283.0
-margin_right = 681.0
-margin_bottom = 403.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = 1.0
+autoplay = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
-margin_left = 39.3213
-margin_top = 0.665161
-margin_right = 289.321
-margin_bottom = 120.665
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -130.0
+margin_right = 150.0
+margin_bottom = 70.0
 rect_clip_content = true
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="Button" parent="MainMenu/VBoxContainer"]
-margin_top = 37.0
-margin_right = 249.0
-margin_bottom = 57.0
-text = "Start"
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_top = 64.0
+margin_right = 300.0
+margin_bottom = 98.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.760784, 0.576471, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.760784, 0.576471, 0.396078, 1 )
+text = "start"
 
-[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
-margin_top = 61.0
-margin_right = 249.0
-margin_bottom = 81.0
-text = "Exit"
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 136.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.760784, 0.576471, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.760784, 0.576471, 0.396078, 1 )
+text = "exit"
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -29.644, 555 )
-scale = Vector2( 0.457143, 0.43505 )
-frames = SubResource( 1 )
-frame = 1
-playing = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/walk_across_galaxy = SubResource( 2 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-autoplay = true
+[node name="Control" parent="." instance=ExtResource( 5 )]

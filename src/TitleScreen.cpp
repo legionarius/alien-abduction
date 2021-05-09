@@ -10,16 +10,13 @@ void TitleScreen::_init() {
 }
 
 void TitleScreen::_ready() {
-	Button *exitBtn = Object::cast_to<Button>(get_node("MainMenu/VBoxContainer/Exit"));
-	Button *startBtn = Object::cast_to<Button>(get_node("MainMenu/VBoxContainer/Start"));
-	AnimationPlayer *animationPlayer = Object::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
-	animationPlayer->play("walk_across_galaxy");
+	Button *exitBtn = cast_to<Button>(get_node("VBoxContainer/Exit"));
+	Button *startBtn = cast_to<Button>(get_node("VBoxContainer/Start"));
+	GameState *gameState = cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
+	sound = cast_to<AudioStreamPlayer>(get_node("Sound"));
 	exitBtn->connect("pressed", this, "_exit");
 	startBtn->connect("pressed", this, "_start");
-}
-
-void TitleScreen::_navigate_to_settings() {
-	Godot::print("No Settings Yet");
+	gameState->connect("update_volume", this, "_update_sound_volume");
 }
 
 void TitleScreen::_exit() {
@@ -39,11 +36,15 @@ void TitleScreen::_input(const Ref<InputEvent> event) {
 	}
 }
 
+void TitleScreen::_update_sound_volume(float_t volume) {
+	sound->set_volume_db(volume);
+}
+
 void TitleScreen::_register_methods() {
 	register_method("_init", &TitleScreen::_init);
 	register_method("_ready", &TitleScreen::_ready);
 	register_method("_exit", &TitleScreen::_exit);
 	register_method("_start", &TitleScreen::_start);
 	register_method("_input", &TitleScreen::_input);
-	register_method("_navigate_to_settings", &TitleScreen::_navigate_to_settings);
+	register_method("_update_sound_volume", &TitleScreen::_update_sound_volume);
 }

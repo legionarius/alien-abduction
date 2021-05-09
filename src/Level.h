@@ -16,7 +16,6 @@ class Level : public Node2D {
 	bool is_started;
 
 public:
-	void _start_level();
 	void _finish_level();
 
 	static void _register_methods();

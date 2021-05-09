@@ -30,7 +30,7 @@ void GameState::_load_level() {
 		_add_level(current_level_id);
 	} else {
 		emit_signal("_game_finished");
-		Label *label = Object::cast_to<Label>(get_tree()->get_root()->get_node("World/Camera2D/GameTimer/GameTimerLabel"));
+		Label *label = Object::cast_to<Label>(get_tree()->get_root()->get_node("World/HUDLayer/GameTimer/GameTimerLabel"));
 		Ref<PackedScene> endScreen = ResourceLoader::get_singleton()->load("entity/EndScreen/EndScreen.tscn");
 		Node *endScreenNode = endScreen->instance();
 		TimeLabel *timeLabel = Object::cast_to<TimeLabel>(endScreenNode->get_node("Time"));
@@ -88,7 +88,7 @@ void GameState::_spawn_player() {
 	auto current_level = level_node->get_child(0);
 	auto spawn_point = current_level->get_node("PlayerStart");
 	if (spawn_point != nullptr) {
-		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Player.tscn");
+		Ref<PackedScene> player_res = ResourceLoader::get_singleton()->load("entity/Player/Character.tscn");
 		auto *player = player_res->instance();
 		player->connect("ready", this, "_player_ready");
 		spawn_point->add_child(player);
@@ -116,6 +116,15 @@ void GameState::_remove_player_from_tree() {
 	}
 }
 
+void GameState::_update_sound_volume(float_t volume) {
+	sound_volume = volume;
+	emit_signal("update_volume", volume);
+}
+
+float_t GameState::_get_sound_volume() {
+	return sound_volume;
+}
+
 void GameState::_register_methods() {
 	register_method("_init", &GameState::_init);
 	register_method("_ready", &GameState::_ready);
@@ -129,4 +138,5 @@ void GameState::_register_methods() {
 	register_signal<GameState>("_increment_level");
 	register_signal<GameState>("camera_start_focus");
 	register_signal<GameState>("camera_end_focus");
+	register_signal<GameState>("update_volume", "volume", GODOT_VARIANT_TYPE_REAL);
 }
