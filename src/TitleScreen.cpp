@@ -10,6 +10,7 @@ void TitleScreen::_init() {
 }
 
 void TitleScreen::_ready() {
+	String osName = OS::get_singleton()->get_name();
 	Button *exitBtn = cast_to<Button>(get_node("VBoxContainer/Exit"));
 	Button *startBtn = cast_to<Button>(get_node("VBoxContainer/Start"));
 	GameState *gameState = cast_to<GameState>(get_tree()->get_root()->get_node("GameState"));
@@ -17,6 +18,9 @@ void TitleScreen::_ready() {
 	exitBtn->connect("pressed", this, "_exit");
 	startBtn->connect("pressed", this, "_start");
 	gameState->connect("update_volume", this, "_update_sound_volume");
+	if(osName == "HTML5"){
+		exitBtn->set_visible(false);
+	}
 }
 
 void TitleScreen::_exit() {
