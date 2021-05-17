@@ -95,10 +95,20 @@ itchio:windows:
   dependencies:
     - windows
 
+itchio:web:
+  stage: deploy
+  only:
+    - /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/
+  script:
+    - butler push ./build/html5 $ITCHIO_USERNAME/$ITCHIO_GAME:html5-web --userversion=$CI_COMMIT_TAG
+  dependencies:
+    - html5
+
 itchio:macosx:
   stage: deploy
   only:
     - /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/
+  when: manual
   script:
     - butler push ./build/mac $ITCHIO_USERNAME/$ITCHIO_GAME:mac --userversion=$CI_COMMIT_TAG
   dependencies:
