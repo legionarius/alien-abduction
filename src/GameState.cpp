@@ -7,7 +7,7 @@
 using namespace godot;
 
 void GameState::_init() {
-	level_count = 2;
+	level_count = 4;
 	current_level_id = 0;
 }
 
